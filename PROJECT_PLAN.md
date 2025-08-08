@@ -65,36 +65,36 @@ Below is a high‑level overview of the components required to build and manage 
 
 ### Layout and structure
 
-| Component | Description |
-| --- | --- |
-| **GlobalLayout (app/layout.tsx)** | Wraps every page. Defines &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, and &lt;footer&gt; and provides global context (theme, metadata). |
-| **Header** | Contains the company logo and top navigation using shadcn/ui’s NavigationMenu. Supports responsive behaviour and keyboard accessibility. |
-| **Footer** | Displays copyright, secondary navigation links and contact information. |
-| **Container** | A utility wrapper for max‑width and consistent padding across pages. |
+| Component                         | Description                                                                                                                              |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **GlobalLayout (app/layout.tsx)** | Wraps every page. Defines &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, and &lt;footer&gt; and provides global context (theme, metadata).   |
+| **Header**                        | Contains the company logo and top navigation using shadcn/ui’s NavigationMenu. Supports responsive behaviour and keyboard accessibility. |
+| **Footer**                        | Displays copyright, secondary navigation links and contact information.                                                                  |
+| **Container**                     | A utility wrapper for max‑width and consistent padding across pages.                                                                     |
 
 ### Reusable UI components
 
-| Component | Description |
-| --- | --- |
-| **Hero** | Displays a headline, subheadline, background image and CTA button on the home page. |
-| **Card** | Base card component used by services, events, and resources. Provides consistent shadow, padding and border. |
-| **ServiceCard** | Extends Card; shows a service’s title, description, icon and link. |
-| **TeamMemberCard** | Shows a team member’s photo, name, role and short bio. |
-| **ResourceCard** | Lists downloadable items with title, description, file type/size and a download button. |
-| **EventCard** | Displays event details (title, date, location, description, registration link). |
-| **PostPreview** | Shows a blog post preview (title, excerpt, date, tags and link). |
-| **NavigationBreadcrumbs** | Renders breadcrumb trails for nested pages like blog posts or events. |
-| **CallToAction** | A reusable section prompting users to perform an action (e.g., contact us or download a report). |
-| **Pagination** | Handles pagination logic and UI for lists (e.g., blog posts, resources). |
+| Component                 | Description                                                                                                  |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Hero**                  | Displays a headline, subheadline, background image and CTA button on the home page.                          |
+| **Card**                  | Base card component used by services, events, and resources. Provides consistent shadow, padding and border. |
+| **ServiceCard**           | Extends Card; shows a service’s title, description, icon and link.                                           |
+| **TeamMemberCard**        | Shows a team member’s photo, name, role and short bio.                                                       |
+| **ResourceCard**          | Lists downloadable items with title, description, file type/size and a download button.                      |
+| **EventCard**             | Displays event details (title, date, location, description, registration link).                              |
+| **PostPreview**           | Shows a blog post preview (title, excerpt, date, tags and link).                                             |
+| **NavigationBreadcrumbs** | Renders breadcrumb trails for nested pages like blog posts or events.                                        |
+| **CallToAction**          | A reusable section prompting users to perform an action (e.g., contact us or download a report).             |
+| **Pagination**            | Handles pagination logic and UI for lists (e.g., blog posts, resources).                                     |
 
 ### Content management utilities
 
-| Utility | Purpose |
-| --- | --- |
+| Utility              | Purpose                                                                                                    |
+| -------------------- | ---------------------------------------------------------------------------------------------------------- |
 | **MarkdownRenderer** | Renders MDX or markdown content using next-mdx-remote and maps standard HTML tags to shadcn/ui components. |
-| **lib/posts.ts** | Contains functions to fetch and process blog posts (e.g., getPostSlugs, getPostBySlug). |
-| **lib/events.ts** | Provides functions to retrieve upcoming and past events. |
-| **lib/resources.ts** | Retrieves metadata and download information for resources (reports, whitepapers, etc.). |
+| **lib/posts.ts**     | Contains functions to fetch and process blog posts (e.g., getPostSlugs, getPostBySlug).                    |
+| **lib/events.ts**    | Provides functions to retrieve upcoming and past events.                                                   |
+| **lib/resources.ts** | Retrieves metadata and download information for resources (reports, whitepapers, etc.).                    |
 
 ### Pages and routing
 
