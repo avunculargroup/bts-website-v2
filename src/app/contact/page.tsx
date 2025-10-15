@@ -88,7 +88,7 @@ export default function Contact() {
                 </p>
                 
                 <div className='bg-accent-50 p-6 rounded-lg border-l-4 border-accent-500'>
-                  <h3 className='font-semibold text-primary-900 mb-2'>What You'll Learn:</h3>
+                  <h3 className='font-semibold text-primary-900 mb-2'>What You&apos;ll Learn:</h3>
                   <ul className='space-y-1 text-primary-700 text-sm'>
                     <li>• What Bitcoin is and why it matters</li>
                     <li>• How Bitcoin fits into a diversified investment strategy</li>

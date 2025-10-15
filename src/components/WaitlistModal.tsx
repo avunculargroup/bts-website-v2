@@ -163,8 +163,8 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
                   <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M5 13l4 4L19 7' />
                 </svg>
               </div>
-              <p className='text-green-600 font-semibold'>You're on the waitlist!</p>
-              <p className='text-primary-700 text-sm mt-2'>We'll notify you when new events are announced.</p>
+              <p className='text-green-600 font-semibold'>You&apos;re on the waitlist!</p>
+              <p className='text-primary-700 text-sm mt-2'>We&apos;ll notify you when new events are announced.</p>
             </div>
           )}
 

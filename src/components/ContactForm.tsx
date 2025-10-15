@@ -186,7 +186,7 @@ export function ContactForm() {
             </svg>
           </div>
           <h3 className='text-xl font-semibold text-primary-900 mb-2'>Message Sent!</h3>
-          <p className='text-primary-700'>We'll get back to you within 24 hours.</p>
+          <p className='text-primary-700'>We&apos;ll get back to you within 24 hours.</p>
         </div>
       )}
 

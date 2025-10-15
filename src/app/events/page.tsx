@@ -35,7 +35,7 @@ export default function Events() {
             </h2>
             
             <p className='text-primary-700 font-body leading-relaxed mb-8 max-w-2xl mx-auto'>
-              We're currently planning our next series of workshops and events. Be the first to know when we announce new sessions by joining our waitlist.
+              We&apos;re currently planning our next series of workshops and events. Be the first to know when we announce new sessions by joining our waitlist.
             </p>
 
             {/* Waitlist Signup */}
