@@ -1,12 +1,19 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Neuton, Source_Sans_3 } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
-const inter = Inter({
+const neuton = Neuton({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-neuton',
+  weight: '400',
+});
+
+const sourceSans3 = Source_Sans_3({
+  subsets: ['latin'],
+  variable: '--font-source-sans',
+  weight: ['400', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -40,7 +47,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className={inter.variable}>
+    <html lang='en' className={`${neuton.variable} ${sourceSans3.variable}`}>
       <body className='min-h-screen flex flex-col antialiased bg-background text-foreground'>
         <Header />
         <main className='flex-1'>{children}</main>

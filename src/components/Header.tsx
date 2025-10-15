@@ -28,31 +28,34 @@ const navigationItems = [
   { href: '/blog', label: 'Blog' },
   { href: '/resources', label: 'Resources' },
   { href: '/events', label: 'Events' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/demo', label: 'Demo' },
 ];
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className='sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
-      <Container className='flex h-16 items-center justify-between'>
+    <header className='sticky top-0 z-50 w-full border-b border-primary-200 bg-primary-950 backdrop-blur supports-[backdrop-filter]:bg-primary-950'>
+      <Container className='flex h-12 items-center justify-between'>
         {/* Logo */}
         <Link href='/' className='flex items-center space-x-2'>
           <div className='h-8 w-8 rounded-lg bg-primary'></div>
-          <span className='text-xl font-bold text-foreground'>Avuncular Group</span>
+          <span className='text-xl font-bold text-secondary-50 font-display'>
+            BTS<span className='text-accent-500 text-2xl'>.</span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <NavigationMenu className='hidden md:flex h-full'>
-          <NavigationMenuList className='h-full items-center'>
+        <NavigationMenu className='hidden md:flex'>
+          <NavigationMenuList className='flex items-center space-x-1 m-0'>
             {navigationItems.map((item) => (
-              <NavigationMenuItem key={item.href} className='h-full'>
+              <NavigationMenuItem key={item.href}>
                 <NavigationMenuLink asChild>
                   <Link
                     href={item.href}
                     className={cn(
-                      'group inline-flex h-full w-max items-center justify-center px-4 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground disabled:pointer-events-none disabled:opacity-50 data-[state=open]:hover:bg-accent data-[state=open]:text-accent-foreground data-[state=open]:focus:bg-accent data-[state=open]:bg-accent/50 focus-visible:ring-ring/50 outline-none transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 cursor-pointer rounded-none bg-transparent',
+                      'group relative inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-secondary-50 hover:text-secondary-50 focus:text-secondary-50 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:text-secondary-50 focus-visible:ring-white/50 outline-none transition-all duration-300 focus-visible:ring-[3px] focus-visible:outline-1 cursor-pointer rounded-md font-display',
+                      'after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent-500 after:transition-all after:duration-300 hover:after:w-full'
                     )}
                   >
                     {item.label}
@@ -65,8 +68,8 @@ export function Header() {
 
         {/* CTA Button */}
         <div className='hidden md:flex items-center space-x-4'>
-          <Button asChild>
-            <Link href='/contact'>Get Started</Link>
+          <Button asChild className="text-secondary-50 border border-secondary-50 bg-transparent hover:bg-secondary-50 hover:text-primary-950 transition-colors font-display">
+            <Link href='/contact'>Contact us</Link>
           </Button>
         </div>
 
@@ -76,7 +79,7 @@ export function Header() {
             <Button
               variant='ghost'
               size='icon'
-              className='md:hidden'
+              className='md:hidden text-secondary-50 hover:bg-white/10 hover:text-secondary-50'
               aria-label='Open navigation menu'
             >
               <Menu className='h-5 w-5' />
@@ -91,16 +94,16 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className='text-lg font-medium text-foreground transition-colors hover:text-primary focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-3 py-2'
+                  className='text-lg font-medium text-secondary-50 transition-colors hover:text-primary focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-3 py-2 font-display'
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
-              <div className='pt-4 border-t'>
-                <Button asChild className='w-full'>
+              <div className='pt-4 border-t border-primary-200'>
+                <Button asChild className='w-full text-secondary-50 border border-secondary-50 bg-transparent hover:bg-secondary-50 hover:text-primary-950 transition-colors font-display'>
                   <Link href='/contact' onClick={() => setIsMobileMenuOpen(false)}>
-                    Get Started
+                    Contact us
                   </Link>
                 </Button>
               </div>

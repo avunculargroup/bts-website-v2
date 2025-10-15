@@ -1,0 +1,366 @@
+/* Crystalline Hero Styles */
+.crystal-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.crystal {
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: float 6s ease-in-out infinite;
+}
+
+.crystal-face {
+  position: absolute;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.1) 0%, 
+    rgba(100, 255, 218, 0.2) 50%, 
+    rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 0 20px rgba(100, 255, 218, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Large Crystals (Background) */
+.crystal-large {
+  width: 200px;
+  height: 200px;
+  animation-duration: 8s;
+}
+
+.crystal-large .crystal-face {
+  width: 200px;
+  height: 200px;
+}
+
+/* Medium Crystals */
+.crystal-medium {
+  width: 120px;
+  height: 120px;
+  animation-duration: 6s;
+}
+
+.crystal-medium .crystal-face {
+  width: 120px;
+  height: 120px;
+}
+
+/* Small Crystals (Foreground) */
+.crystal-small {
+  width: 80px;
+  height: 80px;
+  animation-duration: 4s;
+}
+
+.crystal-small .crystal-face {
+  width: 80px;
+  height: 80px;
+}
+
+/* Crystal Positioning */
+.crystal-bg-1 {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.crystal-bg-2 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.crystal-fg-1 {
+  top: 60%;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+.crystal-bg-3 {
+  top: 15%;
+  left: 60%;
+  animation-delay: 3s;
+}
+
+.crystal-fg-2 {
+  top: 70%;
+  right: 25%;
+  animation-delay: 4s;
+}
+
+.crystal-bg-4 {
+  bottom: 10%;
+  right: 5%;
+  animation-delay: 5s;
+}
+
+.crystal-fg-3 {
+  bottom: 20%;
+  left: 40%;
+  animation-delay: 6s;
+}
+
+.crystal-bg-5 {
+  top: 40%;
+  right: 40%;
+  animation-delay: 7s;
+}
+
+/* Crystal Face Orientations for 3D Effect */
+.crystal-large .face-1 {
+  transform: rotateY(0deg) translateZ(100px);
+  background: linear-gradient(135deg, 
+    rgba(247, 147, 26, 0.2) 0%, 
+    rgba(255, 179, 71, 0.3) 50%, 
+    rgba(100, 255, 218, 0.1) 100%);
+}
+
+.crystal-large .face-2 {
+  transform: rotateY(90deg) translateZ(100px);
+  background: linear-gradient(135deg, 
+    rgba(100, 255, 218, 0.2) 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(247, 147, 26, 0.1) 100%);
+}
+
+.crystal-large .face-3 {
+  transform: rotateY(180deg) translateZ(100px);
+  background: linear-gradient(135deg, 
+    rgba(255, 179, 71, 0.2) 0%, 
+    rgba(100, 255, 218, 0.3) 50%, 
+    rgba(255, 255, 255, 0.1) 100%);
+}
+
+.crystal-large .face-4 {
+  transform: rotateY(270deg) translateZ(100px);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.2) 0%, 
+    rgba(247, 147, 26, 0.3) 50%, 
+    rgba(100, 255, 218, 0.1) 100%);
+}
+
+.crystal-large .face-5 {
+  transform: rotateX(90deg) translateZ(100px);
+  background: linear-gradient(135deg, 
+    rgba(100, 255, 218, 0.2) 0%, 
+    rgba(255, 179, 71, 0.3) 50%, 
+    rgba(247, 147, 26, 0.1) 100%);
+}
+
+.crystal-large .face-6 {
+  transform: rotateX(-90deg) translateZ(100px);
+  background: linear-gradient(135deg, 
+    rgba(247, 147, 26, 0.2) 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(100, 255, 218, 0.1) 100%);
+}
+
+/* Medium Crystal Faces */
+.crystal-medium .face-1 {
+  transform: rotateY(0deg) translateZ(60px);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    rgba(100, 255, 218, 0.25) 50%, 
+    rgba(247, 147, 26, 0.1) 100%);
+}
+
+.crystal-medium .face-2 {
+  transform: rotateY(90deg) translateZ(60px);
+  background: linear-gradient(135deg, 
+    rgba(247, 147, 26, 0.15) 0%, 
+    rgba(255, 255, 255, 0.25) 50%, 
+    rgba(100, 255, 218, 0.1) 100%);
+}
+
+.crystal-medium .face-3 {
+  transform: rotateY(180deg) translateZ(60px);
+  background: linear-gradient(135deg, 
+    rgba(100, 255, 218, 0.15) 0%, 
+    rgba(247, 147, 26, 0.25) 50%, 
+    rgba(255, 255, 255, 0.1) 100%);
+}
+
+.crystal-medium .face-4 {
+  transform: rotateY(270deg) translateZ(60px);
+  background: linear-gradient(135deg, 
+    rgba(255, 179, 71, 0.15) 0%, 
+    rgba(100, 255, 218, 0.25) 50%, 
+    rgba(247, 147, 26, 0.1) 100%);
+}
+
+.crystal-medium .face-5 {
+  transform: rotateX(90deg) translateZ(60px);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.15) 0%, 
+    rgba(247, 147, 26, 0.25) 50%, 
+    rgba(100, 255, 218, 0.1) 100%);
+}
+
+.crystal-medium .face-6 {
+  transform: rotateX(-90deg) translateZ(60px);
+  background: linear-gradient(135deg, 
+    rgba(100, 255, 218, 0.15) 0%, 
+    rgba(255, 179, 71, 0.25) 50%, 
+    rgba(255, 255, 255, 0.1) 100%);
+}
+
+/* Small Crystal Faces */
+.crystal-small .face-1 {
+  transform: rotateY(0deg) translateZ(40px);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.2) 0%, 
+    rgba(247, 147, 26, 0.3) 50%, 
+    rgba(100, 255, 218, 0.15) 100%);
+}
+
+.crystal-small .face-2 {
+  transform: rotateY(90deg) translateZ(40px);
+  background: linear-gradient(135deg, 
+    rgba(100, 255, 218, 0.2) 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(247, 147, 26, 0.15) 100%);
+}
+
+.crystal-small .face-3 {
+  transform: rotateY(180deg) translateZ(40px);
+  background: linear-gradient(135deg, 
+    rgba(247, 147, 26, 0.2) 0%, 
+    rgba(100, 255, 218, 0.3) 50%, 
+    rgba(255, 255, 255, 0.15) 100%);
+}
+
+.crystal-small .face-4 {
+  transform: rotateY(270deg) translateZ(40px);
+  background: linear-gradient(135deg, 
+    rgba(255, 179, 71, 0.2) 0%, 
+    rgba(255, 255, 255, 0.3) 50%, 
+    rgba(100, 255, 218, 0.15) 100%);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg) rotateZ(2deg);
+  }
+  50% {
+    transform: translateY(-5px) rotateX(-2deg) rotateY(-3deg) rotateZ(-1deg);
+  }
+  75% {
+    transform: translateY(-15px) rotateX(3deg) rotateY(-2deg) rotateZ(3deg);
+  }
+}
+
+/* Hover Effects */
+.crystal:hover {
+  animation-play-state: paused;
+  transform: scale(1.1) rotateX(15deg) rotateY(15deg);
+  transition: transform 0.3s ease;
+}
+
+.crystal:hover .crystal-face {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.3) 0%, 
+    rgba(100, 255, 218, 0.4) 50%, 
+    rgba(247, 147, 26, 0.2) 100%);
+  box-shadow: 
+    0 0 30px rgba(100, 255, 218, 0.5),
+    inset 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .crystal-large {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .crystal-large .crystal-face {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .crystal-large .face-1,
+  .crystal-large .face-2,
+  .crystal-large .face-3,
+  .crystal-large .face-4 {
+    transform: translateZ(60px);
+  }
+  
+  .crystal-large .face-5,
+  .crystal-large .face-6 {
+    transform: translateZ(60px);
+  }
+  
+  .crystal-medium {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .crystal-medium .crystal-face {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .crystal-medium .face-1,
+  .crystal-medium .face-2,
+  .crystal-medium .face-3,
+  .crystal-medium .face-4 {
+    transform: translateZ(40px);
+  }
+  
+  .crystal-medium .face-5,
+  .crystal-medium .face-6 {
+    transform: translateZ(40px);
+  }
+  
+  .crystal-small {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .crystal-small .crystal-face {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .crystal-small .face-1,
+  .crystal-small .face-2,
+  .crystal-small .face-3,
+  .crystal-small .face-4 {
+    transform: translateZ(30px);
+  }
+}
+
+/* Performance Optimizations */
+.crystal {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.crystal-face {
+  will-change: transform, background;
+  backface-visibility: hidden;
+}
+
+/* Fallback for older browsers */
+@supports not (backdrop-filter: blur(10px)) {
+  .crystal-face {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .crystal {
+    animation: none;
+  }
+  
+  .crystal:hover {
+    transform: scale(1.05);
+  }
+}

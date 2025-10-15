@@ -89,37 +89,37 @@ The accent palette uses vibrant orange tones for calls-to-action and emphasis.
 
 ### Font Stack
 
-Our typography system uses Inter as the primary font with comprehensive fallbacks for optimal performance and accessibility.
+Our typography system uses Source Sans 3 for headings and Neuton for body text, providing a modern and elegant reading experience.
 
 #### Font Variables
 
 ```css
---font-sans: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+--font-sans: Source Sans 3, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 --font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
---font-display: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
---font-body: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+--font-display: Source Sans 3, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+--font-body: Neuton, serif;
 ```
 
 #### Font Usage
 
 | Font | Usage | Tailwind Class |
 |------|-------|----------------|
-| `font-sans` | General purpose text | `font-sans` |
+| `font-sans` | General purpose text, UI elements | `font-sans` |
 | `font-mono` | Code, technical content | `font-mono` |
-| `font-display` | Headings, titles | `font-display` |
-| `font-body` | Body text, paragraphs | `font-body` |
+| `font-display` | Headings, titles, display text | `font-display` |
+| `font-body` | Body text, paragraphs, content | `font-body` |
 
 ### Typography Scale
 
-| Element | Font Size | Font Weight | Line Height | Usage |
-|---------|-----------|-------------|-------------|-------|
-| h1 | `2.25rem` (36px) | 700 | 1.2 | Main page headings |
-| h2 | `1.875rem` (30px) | 600 | 1.2 | Section headings |
-| h3 | `1.5rem` (24px) | 600 | 1.2 | Subsection headings |
-| h4 | `1.25rem` (20px) | 600 | 1.2 | Card headings |
-| h5 | `1.125rem` (18px) | 600 | 1.2 | Small headings |
-| h6 | `1rem` (16px) | 600 | 1.2 | Minor headings |
-| Body | `1rem` (16px) | 400 | 1.6 | Body text, paragraphs |
+| Element | Font Size | Font Weight | Line Height | Usage | Font Family |
+|---------|-----------|-------------|-------------|-------|-------------|
+| h1 | `2.25rem` (36px) | 700 | 1.2 | Main page headings | Source Sans 3 |
+| h2 | `1.875rem` (30px) | 600 | 1.2 | Section headings | Source Sans 3 |
+| h3 | `1.5rem` (24px) | 600 | 1.2 | Subsection headings | Source Sans 3 |
+| h4 | `1.25rem` (20px) | 600 | 1.2 | Card headings | Source Sans 3 |
+| h5 | `1.125rem` (18px) | 600 | 1.2 | Small headings | Source Sans 3 |
+| h6 | `1rem` (16px) | 600 | 1.2 | Minor headings | Source Sans 3 |
+| Body | `1rem` (16px) | 400 | 1.6 | Body text, paragraphs | Neuton |
 
 ## Spacing & Layout
 
@@ -269,10 +269,11 @@ A utility component for consistent max-width and responsive padding.
 
 ### Typography Guidelines
 
-1. **Headings**: Use `font-display` for all headings (h1-h6)
-2. **Body Text**: Use `font-body` for paragraphs and general content
+1. **Headings**: Use `font-display` (Source Sans 3) for all headings (h1-h6)
+2. **Body Text**: Use `font-body` (Neuton) for paragraphs and general content
 3. **Code**: Use `font-mono` for code snippets and technical content
 4. **Hierarchy**: Maintain clear visual hierarchy with consistent sizing
+5. **Font Pairing**: Source Sans 3 (sans-serif) for headings pairs elegantly with Neuton (serif) for body text
 
 ### Accessibility
 
@@ -283,7 +284,7 @@ A utility component for consistent max-width and responsive padding.
 
 ### Performance
 
-1. **Font Loading**: Inter font is loaded via Next.js for optimal performance
+1. **Font Loading**: Source Sans 3 and Neuton fonts are loaded via Next.js for optimal performance
 2. **CSS Variables**: Colors and fonts are defined as CSS variables for efficient updates
 3. **Tailwind Integration**: Design tokens are integrated with Tailwind for consistent usage
 4. **No Dark Mode**: Single theme reduces complexity and improves performance

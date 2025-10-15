@@ -37,20 +37,20 @@ text-muted-foreground /* Muted text */
 
 ### Font Classes
 ```css
-font-sans         /* General text */
-font-display      /* Headings */
-font-body         /* Body text */
-font-mono         /* Code */
+font-sans         /* General text, UI elements (Source Sans 3) */
+font-display      /* Headings, titles (Source Sans 3) */
+font-body         /* Body text, paragraphs (Neuton) */
+font-mono         /* Code, technical content */
 ```
 
 ### Heading Sizes
 ```css
-text-4xl font-bold    /* h1 */
-text-3xl font-semibold /* h2 */
-text-2xl font-semibold /* h3 */
-text-xl font-semibold  /* h4 */
-text-lg font-semibold  /* h5 */
-text-base font-semibold /* h6 */
+text-4xl font-bold    /* h1 - Source Sans 3 */
+text-3xl font-semibold /* h2 - Source Sans 3 */
+text-2xl font-semibold /* h3 - Source Sans 3 */
+text-xl font-semibold  /* h4 - Source Sans 3 */
+text-lg font-semibold  /* h5 - Source Sans 3 */
+text-base font-semibold /* h6 - Source Sans 3 */
 ```
 
 ## Layout

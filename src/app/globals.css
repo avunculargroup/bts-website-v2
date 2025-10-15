@@ -43,7 +43,7 @@
   --accent-950: #431407;
 
   /* Background and Foreground */
-  --background: #fefefe;
+  --background: #fff7ed;
   --foreground: #102a43;
   --card: #ffffff;
   --card-foreground: #102a43;
@@ -65,10 +65,10 @@
   --radius-xl: 0.75rem;
 
   /* Fonts */
-  --font-sans: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: var(--font-source-sans), 'Source Sans 3', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-  --font-display: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-body: var(--font-inter), 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: var(--font-source-sans), 'Source Sans 3', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-body: var(--font-neuton), 'Neuton', serif;
 }
 
 /* Tailwind Theme Integration */
@@ -129,6 +129,7 @@
   --font-mono: var(--font-mono);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
+  --font-serif: var(--font-neuton);
 
   /* Radius */
   --radius-sm: var(--radius-sm);
@@ -246,4 +247,85 @@
     outline: 2px solid var(--ring);
     outline-offset: 2px;
   }
+}
+
+/* 3D Perspective for Compass Scroll Effect */
+.perspective-1000 {
+  perspective: 1000px;
+  perspective-origin: center center;
+}
+
+/* Compass Needle Stabilizing Animation */
+@keyframes stabilize-north {
+  0% {
+    transform: rotate(15deg); /* Starting position - stable */
+  }
+  10% {
+    transform: rotate(60deg); /* Disturbed position */
+  }
+  30% {
+    transform: rotate(40deg); /* Settling */
+  }
+  50% {
+    transform: rotate(25deg); /* More settling */
+  }
+  70% {
+    transform: rotate(17deg); /* Fine adjustment */
+  }
+  85% {
+    transform: rotate(14deg); /* Overshoot */
+  }
+  92% {
+    transform: rotate(16deg); /* Correction */
+  }
+  96% {
+    transform: rotate(14.5deg); /* Fine tuning */
+  }
+  100% {
+    transform: rotate(15deg); /* Back to stable - seamless loop */
+  }
+}
+
+@keyframes stabilize-south {
+  0% {
+    transform: rotate(195deg); /* Starting position - stable */
+  }
+  10% {
+    transform: rotate(240deg); /* Disturbed position */
+  }
+  30% {
+    transform: rotate(220deg); /* Settling */
+  }
+  50% {
+    transform: rotate(205deg); /* More settling */
+  }
+  70% {
+    transform: rotate(197deg); /* Fine adjustment */
+  }
+  85% {
+    transform: rotate(194deg); /* Overshoot */
+  }
+  92% {
+    transform: rotate(196deg); /* Correction */
+  }
+  96% {
+    transform: rotate(194.5deg); /* Fine tuning */
+  }
+  100% {
+    transform: rotate(195deg); /* Back to stable - seamless loop */
+  }
+}
+
+.animate-stabilize {
+  animation: stabilize-north 8s ease-out infinite;
+  transform-origin: 150px 150px; /* Center of the compass */
+  animation-delay: 1s; /* Start after a brief pause */
+  transform: rotate(15deg); /* Start at the final position to avoid jump */
+}
+
+.animate-stabilize-south {
+  animation: stabilize-south 8s ease-out infinite;
+  transform-origin: 150px 150px; /* Center of the compass */
+  animation-delay: 1s; /* Start after a brief pause */
+  transform: rotate(195deg); /* Start at the final position to avoid jump */
 }
