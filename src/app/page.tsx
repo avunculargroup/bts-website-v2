@@ -22,9 +22,9 @@ export default function Home() {
           >
             <defs>
               <linearGradient id='waveGradient' x1='0%' y1='0%' x2='100%' y2='100%'>
-                <stop offset='0%' stopColor='#f97316' stopOpacity='0.3' />
-                <stop offset='50%' stopColor='#f97316' stopOpacity='0.1' />
-                <stop offset='100%' stopColor='#f97316' stopOpacity='0.2' />
+                <stop offset='0%' stopColor='#f97316' stopOpacity='0.5' />
+                <stop offset='50%' stopColor='#f97316' stopOpacity='0.3' />
+                <stop offset='100%' stopColor='#f97316' stopOpacity='0.4' />
               </linearGradient>
             </defs>
             
