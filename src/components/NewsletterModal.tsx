@@ -42,7 +42,7 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
       } else {
         setMessage(data.error || 'Something went wrong. Please try again.');
       }
-    } catch (error) {
+    } catch {
       setMessage('Network error. Please try again.');
     } finally {
       setIsSubmitting(false);
