@@ -15,7 +15,7 @@ export function OurTeam() {
       title: "Technologist & Bitcoin Specialist",
       image: "/images/about/chris.jpg",
       linkedin: "https://www.linkedin.com/in/chris-pollard-au/",
-      description: "Chris brings deep technology expertise and years of careful Bitcoin investing. He follows societal trends and the future of money, applying what he learns to his own family's financial security. Chris's passion is showing how Bitcoin and emerging technologies can complement traditional investments."
+      description: "Chris brings deep technology expertise and years of Bitcoin study. He follows societal trends and the future of money, applying what he learns to support individuals and corporations. Chris's passion is showing how Bitcoin can play a role in storing value and a medium of exchange."
     }
   ];
 
@@ -82,7 +82,7 @@ export function OurTeam() {
       <div className='text-center mt-12'>
         <div className='bg-accent-100 p-8 rounded-lg'>
           <p className='text-lg text-primary-900 font-body leading-relaxed'>
-            Together, Carri and Chris blend business, life, technology, finance and coaching experience to give you a holistic view of Bitcoin and its potential.
+            Together, Carri and Chris blend business, life, technology, finance and coaching experience to create educational experiences and programs that transform the way people think about money.
           </p>
         </div>
       </div>

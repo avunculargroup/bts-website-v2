@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { NewsletterModal } from '@/components/NewsletterModal';
+import { Services } from '@/components/Services';
+import { Resources } from '@/components/Resources';
 
 export default function Home() {
   const [isNewsletterModalOpen, setIsNewsletterModalOpen] = useState(false);
@@ -10,7 +12,46 @@ export default function Home() {
   return (
     <div className='w-full'>
       {/* Hero Section */}
-      <div className='h-screen bg-transparent flex flex-col lg:flex-row items-center justify-center'>
+      <div className='h-screen bg-transparent flex flex-col lg:flex-row items-center justify-center relative overflow-hidden'>
+        {/* Wave Pattern Background */}
+        <div className='absolute inset-0 opacity-10'>
+          <svg 
+            className='w-full h-full' 
+            viewBox='0 0 1200 800' 
+            preserveAspectRatio='none'
+          >
+            <defs>
+              <linearGradient id='waveGradient' x1='0%' y1='0%' x2='100%' y2='100%'>
+                <stop offset='0%' stopColor='#f97316' stopOpacity='0.3' />
+                <stop offset='50%' stopColor='#f97316' stopOpacity='0.1' />
+                <stop offset='100%' stopColor='#f97316' stopOpacity='0.2' />
+              </linearGradient>
+            </defs>
+            
+            {/* Wave 1 */}
+            <path 
+              d='M0,400 Q150,300 300,400 T600,400 T900,400 T1200,400 L1200,800 L0,800 Z' 
+              fill='url(#waveGradient)'
+              className='animate-pulse'
+            />
+            
+            {/* Wave 2 */}
+            <path 
+              d='M0,500 Q200,350 400,500 T800,500 T1200,500 L1200,800 L0,800 Z' 
+              fill='url(#waveGradient)'
+              className='animate-pulse'
+              style={{ animationDelay: '1s' }}
+            />
+            
+            {/* Wave 3 */}
+            <path 
+              d='M0,600 Q100,450 250,600 T500,600 T750,600 T1000,600 T1200,600 L1200,800 L0,800 Z' 
+              fill='url(#waveGradient)'
+              className='animate-pulse'
+              style={{ animationDelay: '2s' }}
+            />
+          </svg>
+        </div>
         {/* 3D Compass SVG - Above on mobile, left on desktop */}
         <div className='w-full lg:w-1/2 flex items-center justify-center px-8 mb-8 lg:mb-0'>
           <svg 
@@ -167,6 +208,7 @@ export default function Home() {
                 </a>
                 <button 
                   onClick={() => setIsNewsletterModalOpen(true)}
+                  data-newsletter-trigger
                   className='text-lg sm:text-xl font-semibold text-primary-900 hover:text-accent-600 transition-colors duration-300 font-display underline decoration-accent-500 decoration-2 underline-offset-4 hover:decoration-accent-600 cursor-pointer'
                 >
                   Join the Newsletter
@@ -176,6 +218,12 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Resources Section */}
+      <Resources />
+
+      {/* Services Section */}
+      <Services />
 
       {/* Newsletter Modal */}
       <NewsletterModal 

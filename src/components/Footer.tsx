@@ -3,7 +3,7 @@ import { Container } from '@/components/Container';
 
 export function Footer() {
   return (
-    <footer className='border-t border-primary-200 bg-background'>
+    <footer className='bg-background'>
       <Container className='py-12'>
         <div className='grid grid-cols-1 gap-8 md:grid-cols-4'>
           {/* Company Info */}

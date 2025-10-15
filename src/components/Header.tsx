@@ -27,7 +27,6 @@ const navigationItems = [
   { href: '/blog', label: 'Blog' },
   { href: '/resources', label: 'Resources' },
   { href: '/events', label: 'Events' },
-  { href: '/demo', label: 'Demo' },
 ];
 
 export function Header() {
