@@ -73,10 +73,13 @@ const components = {
     className,
     alt,
     src,
-    ...props
+    width,
+    height,
   }: React.ImgHTMLAttributes<HTMLImageElement>) => {
     const imageSrc = typeof src === 'string' ? src : '';
-    return <Image className={cn('rounded-md border', className)} alt={alt || ''} src={imageSrc} width={800} height={600} {...props} />;
+    const imageWidth = typeof width === 'number' ? width : 800;
+    const imageHeight = typeof height === 'number' ? height : 600;
+    return <Image className={cn('rounded-md border', className)} alt={alt || ''} src={imageSrc} width={imageWidth} height={imageHeight} />;
   },
   hr: ({ ...props }) => (
     <hr className="my-8 border-border" {...props} />

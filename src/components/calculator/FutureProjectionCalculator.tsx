@@ -6,7 +6,14 @@ import { ScenarioChart } from './PriceChart';
 import { SensitivityTable } from './ComparisonTable';
 import { calculateProjection, addTaxScenarioToProjection, ProjectionInput } from '@/lib/calculator/projection';
 import { DEFAULT_CAGR_SCENARIOS } from '@/lib/calculator/constants';
-import { TaxScenario, TaxResult } from '@/lib/calculator/tax';
+
+interface TaxDetails {
+  capitalGain: number;
+  cgtDiscountApplied: boolean;
+  taxableGain: number;
+  taxAmount: number;
+  afterTaxValue: number;
+}
 
 interface ProjectionResult {
   futureValue: number;
@@ -17,7 +24,7 @@ interface ProjectionResult {
     base: number;
     aggressive: number;
   }>;
-  taxDetails?: TaxResult;
+  taxDetails?: TaxDetails;
 }
 
 export function FutureProjectionCalculator() {
@@ -81,7 +88,7 @@ export function FutureProjectionCalculator() {
       // Add tax scenario if enabled
       if (enableTaxScenario && purchaseDate) {
         const holdingsPeriodMonths = Math.ceil((new Date().getTime() - purchaseDate.getTime()) / (1000 * 60 * 60 * 24 * 30)) + (years * 12);
-        const taxScenario: TaxScenario = {
+        const taxScenario = {
           corporateTaxRate: parseFloat(corporateTaxRate) / 100,
           holdingsPeriodMonths: holdingsPeriodMonths
         };

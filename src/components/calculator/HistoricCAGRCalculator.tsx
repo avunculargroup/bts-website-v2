@@ -75,13 +75,15 @@ export function HistoricCAGRCalculator() {
 
       // Calculate tax scenario if enabled
       if (enableTaxScenario && startDate && endDate) {
-        const holdingsPeriodMonths = Math.ceil((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 30));
         const taxScenario: TaxScenario = {
-          corporateTaxRate: parseFloat(corporateTaxRate) / 100,
-          holdingsPeriodMonths: holdingsPeriodMonths
+          purchaseDate: startDate,
+          saleDate: endDate,
+          costBase: cagrResult.initialValue,
+          proceeds: cagrResult.endingValue,
+          corporateTaxRate: parseFloat(corporateTaxRate)
         };
 
-        const tax = calculateCGT(cagrResult.endingValue, cagrResult.initialValue, taxScenario);
+        const tax = calculateCGT(taxScenario);
         setTaxResult(tax);
       }
     } catch (err) {
@@ -373,7 +375,7 @@ export function HistoricCAGRCalculator() {
                     <div>
                       <p className='text-primary-600'>CGT Discount:</p>
                       <p className='font-semibold text-primary-900'>
-                        {taxResult.cgtDiscountApplied ? 'Yes (50%)' : 'No'}
+                        {taxResult.cgtDiscount > 0 ? 'Yes (50%)' : 'No'}
                       </p>
                     </div>
                     <div>
@@ -385,13 +387,13 @@ export function HistoricCAGRCalculator() {
                     <div>
                       <p className='text-primary-600'>Tax Payable:</p>
                       <p className='font-semibold text-primary-900'>
-                        ${taxResult.taxAmount.toLocaleString('en-AU')}
+                        ${taxResult.taxPayable.toLocaleString('en-AU')}
                       </p>
                     </div>
                   </div>
                   <div className='mt-4 p-3 bg-primary-50 rounded-lg'>
                     <p className='text-sm text-primary-700'>
-                      <strong>After-Tax Value:</strong> ${taxResult.afterTaxValue.toLocaleString('en-AU')}
+                      <strong>After-Tax Value:</strong> ${taxResult.afterTaxProceeds.toLocaleString('en-AU')}
                     </p>
                   </div>
                 </div>
