@@ -34,7 +34,7 @@ export function Hero({ title, subtitle, imageSrc, imageAlt, ctaLabel, ctaHref }:
             {title}
           </h1>
           {subtitle && (
-            <p className='mb-8 text-lg text-white/90 sm:text-xl'>
+            <p className='mb-8  text-white/90 sm:text-xl'>
               {subtitle}
             </p>
           )}

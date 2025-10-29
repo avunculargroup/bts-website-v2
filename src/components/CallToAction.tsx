@@ -31,7 +31,7 @@ export function CallToAction({ title, description, buttonLabel, buttonUrl, icon:
           
           {/* Description */}
           {description && (
-            <p className='text-lg text-muted-foreground'>
+            <p className=' text-muted-foreground'>
               {description}
             </p>
           )}

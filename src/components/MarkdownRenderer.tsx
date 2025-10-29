@@ -39,7 +39,7 @@ const components = {
   h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h4
       className={cn(
-        'mt-4 mb-2 text-lg font-semibold tracking-tight text-foreground',
+        'mt-4 mb-2  font-semibold tracking-tight text-foreground',
         className
       )}
       {...props}

@@ -88,7 +88,7 @@ export default function Resources() {
             <h1 className='text-4xl sm:text-5xl font-bold text-primary-900 font-display mb-4'>
               Resources
             </h1>
-            <p className='text-lg text-primary-800 font-body max-w-2xl mx-auto'>
+            <p className=' text-primary-800 font-body max-w-2xl mx-auto'>
               Access our curated list of resources to deepen your understanding of Bitcoin and investment strategies.
             </p>
           </div>
@@ -172,7 +172,7 @@ export default function Resources() {
           </div>
 
           {/* FAQ Section */}
-          <div>
+          <div id='faqs'>
             <h2 className='text-3xl font-bold text-primary-900 font-display mb-8 text-center'>
               Frequently Asked Questions
             </h2>
@@ -183,7 +183,7 @@ export default function Resources() {
                     onClick={() => toggleFaq(index)}
                     className='w-full px-6 py-4 text-left flex items-center justify-between hover:bg-primary-50 transition-colors duration-200'
                   >
-                    <h3 className='text-lg font-semibold text-primary-900 font-display pr-4'>
+                    <h3 className=' font-semibold text-primary-900 font-display pr-4'>
                       {faq.question}
                     </h3>
                     {openFaq === index ? (

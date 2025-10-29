@@ -17,27 +17,67 @@ const sourceSans3 = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: 'Avuncular Group - Modern Web Solutions',
-  description: 'Building modern, accessible, and scalable web solutions for forward-thinking businesses.',
-  keywords: ['web development', 'consulting', 'digital solutions', 'technology'],
-  authors: [{ name: 'Avuncular Group' }],
-  creator: 'Avuncular Group',
+  metadataBase: new URL('https://btreasury.com.au'),
+  title: {
+    default: 'Bitcoin Treasury Solutions - Structured Bitcoin Learning for Australia\'s Professionals',
+    template: '%s | Bitcoin Treasury Solutions'
+  },
+  description: 'Structured Bitcoin Learning for Australia\'s Professionals. Training, consulting, and public events to help your organisation understand Bitcoin, accept and store it safely, and implement advanced self-custody strategies.',
+  keywords: ['Bitcoin training Australia', 'Bitcoin education', 'Bitcoin consulting Melbourne', 'Bitcoin treasury solutions', 'SME Bitcoin adoption', 'Corporate Bitcoin training', 'Bitcoin investment Australia', 'self-custody Bitcoin', 'Bitcoin accounting', 'Bitcoin for professionals'],
+  authors: [{ name: 'BTreasury', url: 'https://btreasury.com.au' }],
+  creator: 'Avuncular Group Pty Ltd',
+  publisher: 'Bitcoin Treasury Solutions',
+  applicationName: 'Bitcoin Treasury Solutions',
+  category: 'Education',
+  classification: 'Business',
+  themeColor: '#b28a44',
   openGraph: {
     type: 'website',
-    locale: 'en_US',
-    url: 'https://avunculargroup.com',
-    title: 'Avuncular Group - Modern Web Solutions',
-    description: 'Building modern, accessible, and scalable web solutions for forward-thinking businesses.',
-    siteName: 'Avuncular Group',
+    locale: 'en_AU',
+    url: 'https://btreasury.com.au',
+    siteName: 'Bitcoin Treasury Solutions',
+    title: 'Bitcoin Treasury Solutions - Structured Bitcoin Learning',
+    description: 'Structured Bitcoin Learning for Australia\'s Professionals. Training, consulting, and public events to help your organisation understand Bitcoin and implement advanced self-custody strategies.',
+    emails: ['enquiry@btreasury.com.au'],
+    phoneNumbers: ['+61 422 020 000'],
+    countryName: 'Australia',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Avuncular Group - Modern Web Solutions',
-    description: 'Building modern, accessible, and scalable web solutions for forward-thinking businesses.',
+    title: 'Bitcoin Treasury Solutions - Structured Bitcoin Learning',
+    description: 'Structured Bitcoin Learning for Australia\'s Professionals. Training, consulting, and public events.',
+    site: '@btreasury',
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon1.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon0.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'apple-touch-icon',
+        url: '/apple-icon.png',
+      },
+    ],
+  },
+  manifest: '/manifest.json',
+  alternates: {
+    canonical: '/',
   },
 };
 

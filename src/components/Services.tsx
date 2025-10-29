@@ -36,7 +36,7 @@ export function Services() {
   ];
 
   return (
-    <section className='py-16 lg:py-24 bg-background'>
+    <section id='services' className='py-16 lg:py-24 bg-background'>
       <div className='max-w-6xl mx-auto px-8'>
         {/* Section Header */}
         <div className='text-center mb-16'>

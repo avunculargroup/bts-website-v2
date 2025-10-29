@@ -11,7 +11,7 @@ export default function About() {
           {/* Page Header */}
           <div className='text-center mb-16'>
             <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-900 font-display mb-6'>
-              About BTreasury
+              About Us
             </h1>
             <p className='text-xl text-primary-700 font-body leading-relaxed'>
               Bitcoin education with clarity and care

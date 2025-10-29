@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '@/components/Container';
 
 export function Footer() {
@@ -9,7 +10,12 @@ export function Footer() {
           {/* Company Info */}
           <div className='space-y-4'>
             <div className='flex items-center space-x-2'>
-              <div className='h-8 w-8 rounded-lg bg-primary'></div>
+              <Image
+                src='/images/logo.svg'
+                alt='BTS Logo'
+                width={70}
+                height={70}
+              />
               <span className='text-xl font-semibold text-foreground font-display'>Bitcoin<br/>Treasury<br/>Solutions</span>
             </div>
             <p className='text-sm text-muted-foreground'>
@@ -22,7 +28,7 @@ export function Footer() {
             <h3 className='text-sm font-semibold text-foreground'>Quick Links</h3>
             <nav className='flex flex-col space-y-2'>
               <Link
-                href='/services'
+                href='/#services'
                 className='text-sm text-muted-foreground transition-colors hover:text-foreground'
               >
                 Services
@@ -32,12 +38,6 @@ export function Footer() {
                 className='text-sm text-muted-foreground transition-colors hover:text-foreground'
               >
                 About Us
-              </Link>
-              <Link
-                href='/blog'
-                className='text-sm text-muted-foreground transition-colors hover:text-foreground'
-              >
-                Blog
               </Link>
               <Link
                 href='/contact'
@@ -65,10 +65,10 @@ export function Footer() {
                 Events
               </Link>
               <Link
-                href='/contact/faqs'
+                href='/resources#faqs'
                 className='text-sm text-muted-foreground transition-colors hover:text-foreground'
               >
-                FAQs
+                Bitcoin FAQs
               </Link>
             </nav>
           </div>
@@ -88,7 +88,7 @@ export function Footer() {
         <div className='mt-8 border-t border-primary-200 pt-8'>
           <div className='flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0'>
             <p className='text-sm text-muted-foreground'>
-              © {new Date().getFullYear()} Avuncular Group Pty Ltd. All rights reserved.
+              © {new Date().getFullYear()} Bitcoin Treasury Solutions. All rights reserved.
             </p>
             <div className='flex space-x-6'>
               <Link

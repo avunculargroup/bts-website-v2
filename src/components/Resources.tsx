@@ -1,26 +1,26 @@
 import Link from 'next/link';
-import { BookOpen, FileText, TrendingUp } from 'lucide-react';
+import Image from 'next/image';
 
 export function Resources() {
   const publications = [
     {
       title: "What's Driving Bitcoin Adoption in 2025",
       description: "River Financial's comprehensive report on Bitcoin adoption trends, institutional investment, and the factors shaping Bitcoin's emergence as a global reserve asset.",
-      icon: BookOpen,
+      image: "/images/river_financial.png",
       type: "Report",
       link: "https://river.com/learn/files/river-bitcoin-adoption-report-2025.pdf"
     },
     {
       title: "The Case for Bitcoin",
       description: "Fidelity's research-based framework for understanding Bitcoin's unique features, risk/return characteristics, and potential role as an alternative investment within multi-asset portfolios.",
-      icon: TrendingUp,
+      image: "/images/fidelity-investments.jpg",
       type: "Research",
       link: "https://institutional.fidelity.com/advisors/insights/topics/investing-ideas/the-case-for-bitcoin"
     },
     {
       title: "Conversation with AMP's Shane Oliver",
       description: "An insightful discussion with AMP's Chief Economist Shane Oliver on Bitcoin's role in investment portfolios and institutional adoption trends.",
-      icon: FileText,
+      image: "/images/oliver-shane-650-2020.jpg",
       type: "Video",
       link: "https://www.youtube.com/watch?v=yaU9yN-wJr8"
     }
@@ -42,16 +42,19 @@ export function Resources() {
         {/* Publications Grid */}
         <div className='grid gap-8 md:grid-cols-3 mb-12'>
           {publications.map((publication, index) => (
-            <div key={index} className='bg-white p-8 rounded-lg shadow-sm border border-primary-200 hover:shadow-md transition-shadow duration-300'>
-              {/* Icon */}
-              <div className='mb-6'>
-                <div className='w-16 h-16 bg-accent-100 rounded-lg flex items-center justify-center'>
-                  <publication.icon className='w-8 h-8 text-accent-600' />
-                </div>
+            <div key={index} className='bg-white rounded-lg shadow-sm border border-primary-200 hover:shadow-md transition-shadow duration-300 overflow-hidden'>
+              {/* Image */}
+              <div className='w-full h-48 relative mb-0'>
+                <Image
+                  src={publication.image}
+                  alt={publication.title}
+                  fill
+                  className='object-cover'
+                />
               </div>
 
               {/* Content */}
-              <div className='mb-4'>
+              <div className='p-6'>
                 <span className='inline-block px-3 py-1 bg-accent-100 text-accent-700 text-xs font-semibold rounded-full mb-3'>
                   {publication.type}
                 </span>
@@ -69,7 +72,7 @@ export function Resources() {
                     publication.title
                   )}
                 </h3>
-                <p className='text-primary-700 font-body leading-relaxed'>
+                <p className='text-primary-700 font-body leading-relaxed mb-4'>
                   {publication.description}
                 </p>
                 {publication.link && (

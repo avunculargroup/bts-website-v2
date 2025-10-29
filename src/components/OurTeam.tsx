@@ -47,7 +47,7 @@ export function OurTeam() {
               <h3 className='text-2xl font-bold text-primary-900 font-display mb-2'>
                 {member.name}
               </h3>
-              <p className='text-lg text-accent-600 font-semibold font-display'>
+              <p className=' text-accent-600 font-semibold font-display'>
                 {member.title}
               </p>
             </div>
@@ -81,7 +81,7 @@ export function OurTeam() {
       
       <div className='text-center mt-12'>
         <div className='bg-accent-100 p-8 rounded-lg'>
-          <p className='text-lg text-primary-900 font-body leading-relaxed'>
+          <p className=' text-primary-900 font-body leading-relaxed'>
             Together, Carri and Chris blend business, life, technology, finance and coaching experience to create educational experiences and programs that transform the way people think about money.
           </p>
         </div>

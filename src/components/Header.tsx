@@ -22,11 +22,11 @@ import { Container } from '@/components/Container';
 
 const navigationItems = [
   { href: '/', label: 'Home' },
-  { href: '/services', label: 'Services' },
+  { href: '/#services', label: 'Services' },
   { href: '/about', label: 'About' },
-  { href: '/blog', label: 'Blog' },
   { href: '/resources', label: 'Resources' },
   { href: '/events', label: 'Events' },
+  { href: '/calculator', label: 'Calculator' },
 ];
 
 export function Header() {
@@ -83,23 +83,27 @@ export function Header() {
               <Menu className='h-5 w-5' />
             </Button>
           </SheetTrigger>
-          <SheetContent side='right' className='w-[300px] sm:w-[400px]'>
+          <SheetContent side='right' className='w-[300px] sm:w-[400px] bg-primary-950 border-l border-primary-800'>
             <SheetHeader>
-              <SheetTitle className='text-left'>Navigation</SheetTitle>
+              <SheetTitle className='text-left'>
+                <span className='text-xl font-bold text-secondary-50 font-display'>
+                  BTS<span className='text-accent-500 text-2xl'>.</span>
+                </span>
+              </SheetTitle>
             </SheetHeader>
-            <nav className='flex flex-col space-y-4 mt-6'>
+            <nav className='flex flex-col space-y-4 mt-6 px-4'>
               {navigationItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className='text-lg font-medium text-secondary-50 transition-colors hover:text-primary focus:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-3 py-2 font-display'
+                  className='text-sm font-medium text-secondary-50 transition-colors hover:text-accent-500 focus:text-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 focus:ring-offset-primary-950 rounded-md px-3 py-2 font-display'
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
-              <div className='pt-4 border-t border-primary-200'>
-                <Button asChild className='w-full text-secondary-50 border border-secondary-50 bg-transparent hover:bg-secondary-50 hover:text-primary-950 transition-colors font-display'>
+              <div className='pt-4 mt-4 border-t border-primary-800 px-2'>
+                <Button asChild className='w-full mt-2 text-secondary-50 border border-secondary-50 bg-transparent hover:bg-secondary-50 hover:text-primary-950 transition-colors font-display'>
                   <Link href='/contact' onClick={() => setIsMobileMenuOpen(false)}>
                     Contact us
                   </Link>
