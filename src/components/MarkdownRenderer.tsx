@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
-import { Card } from '@/components/Card';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 interface MarkdownRendererProps {
@@ -72,9 +72,10 @@ const components = {
   img: ({
     className,
     alt,
+    src,
     ...props
   }: React.ImgHTMLAttributes<HTMLImageElement>) => (
-    <img className={cn('rounded-md border', className)} alt={alt} {...props} />
+    <Image className={cn('rounded-md border', className)} alt={alt || ''} src={src || ''} width={800} height={600} {...props} />
   ),
   hr: ({ ...props }) => (
     <hr className="my-8 border-border" {...props} />

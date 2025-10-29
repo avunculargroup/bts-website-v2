@@ -12,12 +12,6 @@ interface PaginationProps {
 export function Pagination({ currentPage, totalPages, generateUrl, onPageChange }: PaginationProps) {
   if (totalPages <= 1) return null;
 
-  const handlePageChange = (page: number) => {
-    if (onPageChange) {
-      onPageChange(page);
-    }
-  };
-
   const getPageUrl = (page: number) => {
     if (generateUrl) {
       return generateUrl(page);

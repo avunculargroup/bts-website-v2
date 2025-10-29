@@ -1,11 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Calculator, Download, FileText, ChevronDown, ChevronUp, AlertCircle } from 'lucide-react';
+import { Download, FileText, ChevronDown, ChevronUp, AlertCircle } from 'lucide-react';
 import { DatePicker } from './DatePicker';
 import { PriceChart } from './PriceChart';
 import { ComparisonTable } from './ComparisonTable';
-import { TaxScenarioPanel } from './TaxScenarioPanel';
 import { calculateCAGR, CAGRInput } from '@/lib/calculator/cagr';
 import { calculateCGT, TaxScenario } from '@/lib/calculator/tax';
 
@@ -85,8 +84,8 @@ export function HistoricCAGRCalculator() {
         const tax = calculateCGT(cagrResult.endingValue, cagrResult.initialValue, taxScenario);
         setTaxResult(tax);
       }
-    } catch (err: any) {
-      setError(err.message || 'Calculation failed');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Calculation failed');
     } finally {
       setIsCalculating(false);
     }

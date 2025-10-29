@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { Calculator, Download, FileText, ChevronDown, ChevronUp, AlertCircle } from 'lucide-react';
+import { Download, FileText, ChevronDown, ChevronUp, AlertCircle } from 'lucide-react';
 import { ScenarioChart } from './PriceChart';
 import { SensitivityTable } from './ComparisonTable';
 import { calculateProjection, addTaxScenarioToProjection, ProjectionInput } from '@/lib/calculator/projection';
 import { DEFAULT_CAGR_SCENARIOS } from '@/lib/calculator/constants';
-import { TaxScenario } from '@/lib/calculator/tax';
+import { TaxScenario, TaxResult } from '@/lib/calculator/tax';
 
 interface ProjectionResult {
   futureValue: number;
@@ -17,7 +17,7 @@ interface ProjectionResult {
     base: number;
     aggressive: number;
   }>;
-  taxDetails?: any;
+  taxDetails?: TaxResult;
 }
 
 export function FutureProjectionCalculator() {
@@ -95,8 +95,8 @@ export function FutureProjectionCalculator() {
       }
 
       setResult(finalResult);
-    } catch (err: any) {
-      setError(err.message || 'Calculation failed');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Calculation failed');
     } finally {
       setIsCalculating(false);
     }

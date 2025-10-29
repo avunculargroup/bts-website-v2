@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Calculator, TrendingUp, HelpCircle, ArrowLeft } from 'lucide-react';
 import { HelpDrawer } from './HelpDrawer';
 
@@ -34,7 +35,7 @@ export function CalculatorLayout({ activeTab, onTabChange, children }: Calculato
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <div className='flex h-16 items-center justify-between'>
               {/* Logo */}
-              <a href='/' className='flex items-center space-x-3 hover:opacity-80 transition-opacity'>
+              <Link href='/' className='flex items-center space-x-3 hover:opacity-80 transition-opacity'>
                 <Image
                   src='/images/logo.svg'
                   alt='BTreasury Logo'
@@ -48,18 +49,18 @@ export function CalculatorLayout({ activeTab, onTabChange, children }: Calculato
                     Bitcoin CAGR Calculator
                   </span>
                 </div>
-              </a>
+              </Link>
 
               {/* Right side buttons */}
               <div className='flex items-center space-x-4'>
                 {/* Return to Main Website Button */}
-                <a
+                <Link
                   href='/'
                   className='flex items-center space-x-2 px-3 py-2 text-sm text-secondary-50 hover:text-accent-500 transition-colors rounded-md hover:bg-white/10'
                 >
                   <ArrowLeft className='h-4 w-4' />
                   <span className='hidden sm:inline'>Return to Main Website</span>
-                </a>
+                </Link>
 
                 {/* Help Button */}
                 <button
