@@ -326,7 +326,6 @@ function greet(name: string): string {
               <Pagination
                 currentPage={3}
                 totalPages={10}
-                onPageChange={(page) => console.log('Page changed to:', page)}
               />
             </div>
           </Container>
