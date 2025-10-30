@@ -61,6 +61,10 @@ export function HelpDrawer({ isOpen, onClose }: HelpDrawerProps) {
                       <p className='text-sm text-primary-600 font-body'>
                         Where n is the number of years. CAGR smooths volatile returns but doesn&apos;t capture intra-period volatility.
                       </p>
+                      <p className='text-sm text-primary-600 font-body'>
+                        For broader ROI and CAGR context across multiple timeframes, see the Bitcoin charts at 
+                        <a href='https://casebitcoin.com/charts' target='_blank' rel='noopener noreferrer' className='underline text-accent-600 hover:text-accent-700'>casebitcoin.com/charts</a>.
+                      </p>
                     </div>
                   </div>
                 )}
@@ -183,7 +187,7 @@ export function HelpDrawer({ isOpen, onClose }: HelpDrawerProps) {
                       <ul className='text-sm text-primary-600 font-body space-y-2'>
                         <li>• Tax rules: Australian Taxation Office</li>
                         <li>• Accounting standards: IFRS Foundation</li>
-                        <li>• Asset comparison data: Public market indices</li>
+                        <li>• Asset comparison data: Public market indices; Bitcoin ROI & CAGR context: <a href='https://casebitcoin.com/charts' target='_blank' rel='noopener noreferrer' className='underline text-accent-600 hover:text-accent-700'>casebitcoin.com/charts</a></li>
                       </ul>
                       
                       <div className='bg-blue-50 border border-blue-200 rounded-lg p-3 mt-4'>

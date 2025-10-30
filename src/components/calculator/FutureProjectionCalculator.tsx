@@ -153,7 +153,7 @@ export function FutureProjectionCalculator() {
             <div className='space-y-4'>
               {/* Current Holdings */}
               <div>
-                <label className='block text-sm font-medium text-primary-800 mb-2'>
+                <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                   Current Bitcoin Holdings (BTC) *
                 </label>
                 <input
@@ -168,7 +168,7 @@ export function FutureProjectionCalculator() {
 
               {/* Current Price */}
               <div>
-                <label className='block text-sm font-medium text-primary-800 mb-2'>
+                <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                   Current Bitcoin Price (AUD) *
                 </label>
                 <input
@@ -185,7 +185,7 @@ export function FutureProjectionCalculator() {
 
               {/* Expected CAGR */}
               <div>
-                <label className='block text-sm font-medium text-primary-800 mb-2'>
+                <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                   Expected CAGR (%)
                 </label>
                 <select
@@ -203,7 +203,7 @@ export function FutureProjectionCalculator() {
 
               {/* Projection Years */}
               <div>
-                <label className='block text-sm font-medium text-primary-800 mb-2'>
+                <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                   Projection Horizon (Years) *
                 </label>
                 <input
@@ -240,14 +240,14 @@ export function FutureProjectionCalculator() {
                         onChange={(e) => setEnableTaxScenario(e.target.checked)}
                         className='form-checkbox text-accent-500'
                       />
-                      <label htmlFor='enableTaxScenario' className='ml-2 text-primary-700 text-sm'>
+                      <label htmlFor='enableTaxScenario' className='ml-2 text-primary-700 text-base md:text-lg'>
                         Include tax scenario analysis
                       </label>
                     </div>
                     {enableTaxScenario && (
                       <>
                         <div>
-                          <label className='block text-sm font-medium text-primary-800 mb-2'>
+                          <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                             Purchase Date
                           </label>
                           <input
@@ -258,7 +258,7 @@ export function FutureProjectionCalculator() {
                           />
                         </div>
                         <div>
-                          <label htmlFor='corporateTaxRate' className='block text-sm font-medium text-primary-800 mb-1'>
+                          <label htmlFor='corporateTaxRate' className='block text-base md:text-lg font-medium text-primary-800 mb-1'>
                             Corporate Tax Rate (%)
                           </label>
                           <input
@@ -282,7 +282,7 @@ export function FutureProjectionCalculator() {
               <button
                 onClick={handleCalculate}
                 disabled={isCalculating}
-                className='w-full bg-accent-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-accent-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-display'
+                className='w-full bg-accent-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-accent-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-display text-base'
               >
                 {isCalculating ? 'Calculating...' : 'Calculate Projection'}
               </button>

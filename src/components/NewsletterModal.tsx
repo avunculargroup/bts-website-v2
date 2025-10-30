@@ -96,7 +96,7 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
               <button
                 type='submit'
                 disabled={isSubmitting}
-                className='w-full bg-accent-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-accent-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer font-display'
+              className='w-full bg-accent-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-accent-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer font-display text-base'
               >
                 {isSubmitting ? 'Subscribing...' : 'Subscribe'}
               </button>

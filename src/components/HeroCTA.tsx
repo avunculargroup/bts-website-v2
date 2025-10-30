@@ -4,9 +4,12 @@ import { useState } from 'react';
 import { Compass, TrendingUp, ShieldCheck, Target, Lightbulb, Users, TrendingDown, Map, DollarSign, Wallet } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { BookSessionModal } from '@/components/BookSessionModal';
 
 export function HeroCTA() {
   const [showFullTamTestimonial, setShowFullTamTestimonial] = useState(false);
+  const [isBookModalOpen, setIsBookModalOpen] = useState(false);
+  const [currentSessionType, setCurrentSessionType] = useState<'Corporate & SME' | 'Accountants & Financial Advisors' | 'Individuals' | 'Workshop'>('Workshop');
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -28,7 +31,7 @@ export function HeroCTA() {
             </h2>
             <div className='space-y-4 max-w-4xl mx-auto'>
               <p className=' text-primary-800 font-body leading-relaxed'>
-                BTreasury empowers companies and interested individuals to explore Bitcoin as part of a diversified investment strategy. We offer small, in‑person sessions in Melbourne where experienced coaches demystify Bitcoin and show how it can fit into your financial plan.
+                BTS empowers companies and individuals to explore bitcoin as part of a diversified investment strategy. We offer small, in‑person sessions in Melbourne where experienced coaches demystify Bitcoin and show how it can fit into your financial plan.
               </p>
               <p className=' text-primary-800 font-body leading-relaxed'>
                 There is no hype and no promises of fast fortunes—just practical education that builds confidence for slow, certain growth. Join us to reclaim control over your money and prepare for the future.
@@ -40,19 +43,19 @@ export function HeroCTA() {
           <div className='flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center'>
             <button 
               onClick={() => scrollToSection('corporate-sme')}
-              className='w-full sm:w-auto bg-accent-500 text-white py-4 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display '
+              className='w-full sm:w-auto bg-accent-500 text-white py-4 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base '
             >
               Corporate & SME
             </button>
             <button 
               onClick={() => scrollToSection('accountants-advisors')}
-              className='w-full sm:w-auto bg-accent-500 text-white py-4 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display '
+              className='w-full sm:w-auto bg-accent-500 text-white py-4 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base '
             >
               Accountants & Financial Advisors
             </button>
             <button 
               onClick={() => scrollToSection('individuals')}
-              className='w-full sm:w-auto bg-accent-500 text-white py-4 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display '
+              className='w-full sm:w-auto bg-accent-500 text-white py-4 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base '
             >
               Individuals
             </button>
@@ -117,7 +120,9 @@ export function HeroCTA() {
             <p className='text-2xl font-semibold text-accent-600 font-display mb-6'>
               only $195pp
             </p>
-            <button className='bg-accent-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display'>
+            <button className='bg-accent-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base'
+              onClick={() => { setCurrentSessionType('Corporate & SME'); setIsBookModalOpen(true); }}
+            >
               Book Session
             </button>
           </div>
@@ -176,18 +181,23 @@ export function HeroCTA() {
 
           <div className='bg-accent-50 p-8 rounded-lg border-l-4 border-accent-500 text-center'>
             <p className=' text-primary-800 font-body leading-relaxed mb-4'>
-              Schedule a 1-hour customized, in-house INTRODUCTORY WORKSHOP for your firm&apos;s staff here
+              Schedule a 1-hour customized, in-house introductory workshop for your firm&apos;s staff here
             </p>
             <p className='text-2xl font-semibold text-accent-600 font-display mb-6'>
               Only $195pp
             </p>
-            <button className='bg-accent-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display'>
+            <button className='bg-accent-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base'
+              onClick={() => { setCurrentSessionType('Accountants & Financial Advisors'); setIsBookModalOpen(true); }}
+            >
               Book Workshop
             </button>
           </div>
 
           {/* Testimonial */}
-          <div className='mt-16 bg-gradient-to-br from-accent-100 to-primary-50 p-8 rounded-lg border-2 border-accent-300 shadow-lg'>
+          <div className='mt-16 bg-gradient-to-br from-accent-100 to-primary-50 p-8 rounded-lg border-2 border-accent-300 shadow-lg relative'>
+            <span className='absolute top-3 left-3 inline-block px-3 py-1 text-xs font-semibold bg-accent-100 text-accent-700 rounded-full border border-accent-200'>
+              Testimonial
+            </span>
             <div className='flex flex-col items-center space-y-6'>
               <div className='bg-white rounded-full p-1 shadow-md'>
                 <Image
@@ -285,18 +295,24 @@ export function HeroCTA() {
 
           <div className='bg-accent-50 p-8 rounded-lg border-l-4 border-accent-500 text-center'>
             <p className=' text-primary-800 font-body leading-relaxed mb-4'>
-              Join our 1-day PUBLIC WORKSHOP for you and your loved ones
+              Join our 1-day public workshop for you and your loved ones
             </p>
             <p className='text-2xl font-semibold text-accent-600 font-display mb-6'>
               Only $495pp here
             </p>
-            <button className='bg-accent-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display'>
-              Book Workshop
-            </button>
+            <Link
+              href='/events'
+              className='inline-block bg-accent-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base'
+            >
+              Check available workshops
+            </Link>
           </div>
 
           {/* Testimonial */}
-          <div className='mt-16 bg-gradient-to-br from-accent-100 to-primary-50 p-8 rounded-lg border-2 border-accent-300 shadow-lg'>
+          <div className='mt-16 bg-gradient-to-br from-accent-100 to-primary-50 p-8 rounded-lg border-2 border-accent-300 shadow-lg relative'>
+            <span className='absolute top-3 left-3 inline-block px-3 py-1 text-xs font-semibold bg-accent-100 text-accent-700 rounded-full border border-accent-200'>
+              Testimonial
+            </span>
             <div className='flex flex-col items-center space-y-6'>
               <div className='bg-white rounded-full p-1 shadow-md'>
                 <Image
@@ -370,6 +386,7 @@ export function HeroCTA() {
           </div>
         </div>
       </div>
+      <BookSessionModal isOpen={isBookModalOpen} onClose={() => setIsBookModalOpen(false)} sessionType={currentSessionType} />
     </>
   );
 }

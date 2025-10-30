@@ -39,7 +39,7 @@ export function Hero({ title, subtitle, imageSrc, imageAlt, ctaLabel, ctaHref }:
             </p>
           )}
           {ctaLabel && ctaHref && (
-            <Button asChild size='lg' className='bg-primary hover:bg-primary/90'>
+            <Button asChild className='bg-primary hover:bg-primary/90 text-base'>
               <Link href={ctaHref}>
                 {ctaLabel}
               </Link>

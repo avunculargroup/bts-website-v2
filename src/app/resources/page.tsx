@@ -153,7 +153,7 @@ export default function Resources() {
                   Featured Discussion
                 </h3>
                 <p className='text-primary-700 font-body leading-relaxed max-w-3xl mx-auto'>
-                  Watch Carri from BTreasury discuss Bitcoin with Sevan Tuna from Alexander Spencer, an accounting firm in Camberwell.
+                  Watch Carri from BTS discuss Bitcoin with Sevan Tuna from Alexander Spencer, an accounting firm in Camberwell.
                 </p>
               </div>
               
@@ -161,7 +161,7 @@ export default function Resources() {
               <div className='aspect-video max-w-4xl mx-auto'>
                 <iframe
                   src='https://www.youtube.com/embed/Bphcovq_VUk'
-                  title='Carri from BTreasury discusses Bitcoin with Sevan Tuna from Alexander Spencer'
+                  title='Carri from BTS discusses Bitcoin with Sevan Tuna from Alexander Spencer'
                   frameBorder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                   allowFullScreen

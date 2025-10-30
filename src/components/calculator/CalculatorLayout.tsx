@@ -38,14 +38,13 @@ export function CalculatorLayout({ activeTab, onTabChange, children }: Calculato
               <Link href='/' className='flex items-center space-x-3 hover:opacity-80 transition-opacity'>
                 <Image
                   src='/images/logo.svg'
-                  alt='BTreasury Logo'
+                  alt='BTS Logo'
                   width={32}
                   height={32}
                   className='h-8 w-8'
                 />
-                <div className='flex items-center space-x-2'>
-                  <Calculator className='h-6 w-6 text-accent-500' />
-                  <span className='text-xl font-bold text-secondary-50 font-display'>
+                <div className='flex items-center'>
+                  <span className='text-2xl md:text-3xl font-bold text-secondary-50 font-display'>
                     Bitcoin CAGR Calculator
                   </span>
                 </div>
@@ -81,7 +80,7 @@ export function CalculatorLayout({ activeTab, onTabChange, children }: Calculato
             <nav className='flex space-x-8'>
               <button
                 onClick={() => onTabChange('historic')}
-                className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
+                className={`py-4 px-1 border-b-2 font-semibold text-base md:text-lg transition-colors ${
                   activeTab === 'historic'
                     ? 'border-accent-500 text-accent-600'
                     : 'border-transparent text-primary-500 hover:text-primary-700 hover:border-primary-300'
@@ -94,7 +93,7 @@ export function CalculatorLayout({ activeTab, onTabChange, children }: Calculato
               </button>
               <button
                 onClick={() => onTabChange('future')}
-                className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors ${
+                className={`py-4 px-1 border-b-2 font-semibold text-base md:text-lg transition-colors ${
                   activeTab === 'future'
                     ? 'border-accent-500 text-accent-600'
                     : 'border-transparent text-primary-500 hover:text-primary-700 hover:border-primary-300'
@@ -110,12 +109,12 @@ export function CalculatorLayout({ activeTab, onTabChange, children }: Calculato
         </div>
 
         {/* Main Content - Flex grow to push footer down */}
-        <main className='flex-1 pb-20'>
+        <main className='flex-1 pb-0 lg:pb-20'>
           {children}
         </main>
 
-        {/* Disclaimers Footer - Fixed to bottom */}
-        <footer className='fixed bottom-0 left-0 right-0 z-30 bg-primary-50 border-t border-primary-200 shadow-lg'>
+        {/* Disclaimers Footer - Fixed on large screens, inline on small/medium */}
+        <footer className='lg:fixed lg:bottom-0 lg:left-0 lg:right-0 z-30 bg-primary-50 border-t border-primary-200 shadow-lg'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4'>
             <div className='text-center'>
               <p className='text-sm text-primary-600 font-body'>

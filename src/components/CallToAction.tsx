@@ -38,7 +38,7 @@ export function CallToAction({ title, description, buttonLabel, buttonUrl, icon:
           
           {/* CTA Button */}
           <div className='pt-4'>
-            <Button asChild size='lg' className='bg-primary hover:bg-primary/90'>
+            <Button asChild className='bg-primary hover:bg-primary/90 text-base'>
               <Link href={buttonUrl}>
                 {buttonLabel}
               </Link>

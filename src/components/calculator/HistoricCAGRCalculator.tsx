@@ -139,7 +139,7 @@ export function HistoricCAGRCalculator() {
               {/* Date Range */}
               <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <div>
-                  <label className='block text-sm font-medium text-primary-800 mb-2'>
+                  <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                     Start Date *
                   </label>
                   <DatePicker
@@ -150,7 +150,7 @@ export function HistoricCAGRCalculator() {
                   />
                 </div>
                 <div>
-                  <label className='block text-sm font-medium text-primary-800 mb-2'>
+                  <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                     End Date *
                   </label>
                   <DatePicker
@@ -164,7 +164,7 @@ export function HistoricCAGRCalculator() {
 
               {/* Investment Amount */}
               <div>
-                <label className='block text-sm font-medium text-primary-800 mb-2'>
+                <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                   Initial Investment *
                 </label>
                 <div className='flex rounded-lg shadow-sm'>
@@ -189,7 +189,7 @@ export function HistoricCAGRCalculator() {
               {/* Bitcoin Prices */}
               <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <div>
-                  <label className='block text-sm font-medium text-primary-800 mb-2'>
+                  <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                     Bitcoin Price at Start (AUD) *
                   </label>
                   <input
@@ -204,7 +204,7 @@ export function HistoricCAGRCalculator() {
                   </p>
                 </div>
                 <div>
-                  <label className='block text-sm font-medium text-primary-800 mb-2'>
+                  <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                     Bitcoin Price at End (AUD) *
                   </label>
                   <input
@@ -243,13 +243,13 @@ export function HistoricCAGRCalculator() {
                         onChange={(e) => setEnableTaxScenario(e.target.checked)}
                         className='form-checkbox text-accent-500'
                       />
-                      <label htmlFor='enableTaxScenario' className='ml-2 text-primary-700 text-sm'>
+                      <label htmlFor='enableTaxScenario' className='ml-2 text-primary-700 text-base md:text-lg'>
                         Include tax scenario analysis
                       </label>
                     </div>
                     {enableTaxScenario && (
                       <div>
-                        <label htmlFor='corporateTaxRate' className='block text-sm font-medium text-primary-800 mb-1'>
+                        <label htmlFor='corporateTaxRate' className='block text-base md:text-lg font-medium text-primary-800 mb-1'>
                           Corporate Tax Rate (%)
                         </label>
                         <input
@@ -272,7 +272,7 @@ export function HistoricCAGRCalculator() {
               <button
                 onClick={handleCalculate}
                 disabled={isCalculating}
-                className='w-full bg-accent-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-accent-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-display'
+                className='w-full bg-accent-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-accent-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed font-display text-base'
               >
                 {isCalculating ? 'Calculating...' : 'Calculate CAGR'}
               </button>

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { NewsletterModal } from '@/components/NewsletterModal';
+import { Calculator } from 'lucide-react';
 import { Services } from '@/components/Services';
 import { Resources } from '@/components/Resources';
 import { HeroImages } from '@/components/HeroImages';
@@ -51,9 +52,12 @@ export default function Home() {
       <Resources />
 
       {/* Calculator CTA Section */}
-      <div className='py-16 lg:py-24 bg-primary-50'>
+      <div className='py-16 lg:py-24 bg-accent-50'>
         <div className='max-w-6xl mx-auto px-8'>
           <div className='text-center mb-12'>
+            <div className='flex justify-center mb-4'>
+              <Calculator className='w-12 h-12 text-accent-600' />
+            </div>
             <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 font-display mb-6'>
               Bitcoin CAGR Calculator
             </h2>
@@ -69,12 +73,12 @@ export default function Home() {
                 Try Our Calculator
               </h3>
               <p className='text-primary-700 font-body leading-relaxed mb-6'>
-                Analyze Bitcoin&apos;s historic CAGR, project future values, and understand tax implications 
+                Analyse Bitcoin&apos;s historic CAGR, project future values, and understand tax implications 
                 for Australian investors and corporate treasuries.
               </p>
               <a
                 href='/calculator'
-                className='inline-flex items-center px-6 py-3 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition-colors duration-300 font-display'
+                className='inline-flex items-center px-6 py-3 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition-colors duration-300 font-display text-base'
               >
                 Open Calculator
                 <svg className='ml-2 w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>

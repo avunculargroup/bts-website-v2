@@ -65,7 +65,7 @@ We reserve the right at any time to modify or discontinue the Service (or any pa
 
 Certain products or Services may be available exclusively online through the website. These products or Services may have limited quantities and offer no refunds.
 
-We have made every effort to display as accurately as possible the colors and images of our products that appear on the site. We cannot guarantee that your computer monitor's display of any color will be accurate.
+We have made every effort to display as accurately as possible the colours and images of our products that appear on the site. We cannot guarantee that your computer monitor's display of any colour will be accurate.
 
 We reserve the right, but are not obligated, to limit the sales of our products or Services to any person, geographic region or jurisdiction. We may exercise this right on a case-by-case basis. We reserve the right to limit the quantities of any products or Services that we offer. All descriptions of products or product pricing are subject to change at anytime without notice, at the sole discretion of us. We reserve the right to discontinue any product at any time. Any offer for any product or service made on this site is void where prohibited.
 

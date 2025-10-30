@@ -50,7 +50,7 @@ export default function Events() {
               
               <Button 
                 onClick={() => setIsWaitlistModalOpen(true)}
-                className='w-full bg-accent-500 hover:bg-accent-600 text-white font-display'
+                className='w-full bg-accent-500 hover:bg-accent-600 text-white font-display text-base'
               >
                 Join Waitlist
               </Button>
@@ -117,7 +117,10 @@ export default function Events() {
 
           {/* Testimonial */}
           <div className='mt-16 mb-16'>
-            <div className='bg-gradient-to-br from-accent-100 to-primary-50 p-8 rounded-lg border-2 border-accent-300 shadow-lg'>
+            <div className='bg-gradient-to-br from-accent-100 to-primary-50 p-8 rounded-lg border-2 border-accent-300 shadow-lg relative'>
+              <span className='absolute top-3 left-3 inline-block px-3 py-1 text-xs font-semibold bg-accent-100 text-accent-700 rounded-full border border-accent-200'>
+                Testimonial
+              </span>
               <div className='flex flex-col items-center space-y-6'>
                 <div className='text-center max-w-2xl'>
                   <p className='text-2xl text-primary-900 font-body italic mb-4 leading-relaxed'>
@@ -161,7 +164,7 @@ export default function Events() {
               <p className='text-primary-700 font-body mb-6'>
                 We also offer one-on-one coaching and custom workshops for businesses and groups.
               </p>
-              <Button asChild className='bg-accent-500 hover:bg-accent-600 text-white font-display'>
+              <Button asChild className='bg-accent-500 hover:bg-accent-600 text-white font-display text-base'>
                 <a href='/contact'>Get in Touch</a>
               </Button>
             </div>

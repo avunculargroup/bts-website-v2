@@ -62,12 +62,12 @@ export async function POST(request: NextRequest) {
           {
             From: {
               Email: 'noreply@btreasury.com.au',
-              Name: 'BTreasury Website'
+              Name: 'BTS Website'
             },
             To: [
               {
                 Email: 'enquiry@btreasury.com.au',
-                Name: 'BTreasury Team'
+                Name: 'BTS Team'
               }
             ],
             Subject: 'New Waitlist Signup - Events',

@@ -102,16 +102,16 @@ export function Resources() {
               <h3 className='text-2xl font-bold text-primary-900 font-display mb-4'>
                 Featured Discussion
               </h3>
-              <p className='text-primary-700 font-body leading-relaxed max-w-3xl mx-auto'>
-                Watch Carri from BTreasury discuss Bitcoin with Sevan Tuna from Alexander Spencer, an accounting firm in Camberwell.
-              </p>
+            <p className='text-primary-700 font-body leading-relaxed max-w-3xl mx-auto'>
+              Watch Carri from BTS discuss Bitcoin with Sevan Tuna from Alexander Spencer, an accounting firm in Camberwell.
+            </p>
             </div>
             
             {/* YouTube Video Embed */}
             <div className='aspect-video max-w-4xl mx-auto'>
-              <iframe
+            <iframe
                 src='https://www.youtube.com/embed/Bphcovq_VUk'
-                title='Carri from BTreasury discusses Bitcoin with Sevan Tuna from Alexander Spencer'
+              title='Carri from BTS discusses Bitcoin with Sevan Tuna from Alexander Spencer'
                 frameBorder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                 allowFullScreen
@@ -132,7 +132,7 @@ export function Resources() {
             </p>
             <Link 
               href='/resources'
-              className='inline-flex items-center px-6 py-3 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition-colors duration-300 font-display'
+              className='inline-flex items-center px-6 py-3 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition-colors duration-300 font-display text-base'
             >
               View All Resources
               <svg className='ml-2 w-4 h-4' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
