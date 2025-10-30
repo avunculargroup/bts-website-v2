@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 async function getPrivacyPolicy() {
-  const filePath = join(process.cwd(), 'src', 'PRIVACY.md');
+  const filePath = join(process.cwd(), 'PRIVACY.md');
   const content = await readFile(filePath, 'utf-8');
   return content;
 }

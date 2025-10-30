@@ -24,14 +24,14 @@ export default function Home() {
           }}
         />
         {/* Hero Content */}
-        <div className='relative z-10 w-full flex flex-col lg:flex-row items-center justify-center gap-0 lg:gap-0 py-20 lg:py-0'>
+        <div className='relative z-10 w-full flex flex-col lg:flex-row items-center justify-center gap-0 lg:gap-0 lg:py-0'>
           {/* Hero Images Component */}
-          <div className='w-full lg:w-1/2 flex justify-center px-16 sm:px-20 lg:px-12 pr-16 lg:pr-8 mb-4 sm:mb-6 lg:mb-0 lg:items-center bg-transparent'>
+          <div className='w-full lg:w-1/2 flex justify-center sm:px-20 lg:px-12 lg:pr-8 mb-4 sm:mb-6 lg:mb-0 lg:items-center bg-transparent'>
             <HeroImages />
           </div>
           
           {/* Slogan - Below on mobile, right on desktop */}
-          <div className='w-full lg:w-1/2 flex items-center justify-center px-16 sm:px-20 lg:px-12 pl-16 lg:pl-8'>
+          <div className='w-full lg:w-1/2 flex items-center justify-center sm:px-20 lg:px-12 lg:pl-8'>
             <div className='text-center lg:text-right'>
               <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary-900 font-display leading-tight'>
                 Structured Bitcoin Learning
