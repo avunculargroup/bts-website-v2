@@ -33,7 +33,7 @@ export function AboutUs() {
           <div className='order-1 lg:order-2 space-y-6'>
             <div className='text-primary-900 font-body leading-relaxed'>
               <p className='text-xl mb-4'>
-                Bitcoin Treasury Solutions was founded in Melbourne by <strong>Carri</strong> and <strong>Chris</strong>, two self‑confessed finance and technology nerds who wanted to cut through the noise surrounding Bitcoin.
+                Bitcoin Treasury Solutions is Melbourne based. We were founded by <strong>Carri</strong> and <strong>Chris</strong>, two self‑confessed finance and technology nerds who wanted to cut through the noise surrounding Bitcoin.
               </p>
               <p className='text-xl mb-6'>
                 After decades of coaching Australia&apos;s top executives and careful personal Bitcoin investing, they realised that many people were curious about Bitcoin but didn&apos;t know where to turn for trustworthy guidance.

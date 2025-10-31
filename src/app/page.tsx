@@ -35,7 +35,7 @@ export default function Home() {
           {/* Slogan - Below on mobile, right on desktop */}
           <div className='w-full lg:w-1/2 flex items-center justify-center sm:px-20 px-16 lg:px-12 lg:pl-8 pb-20'>
             <div className='text-center lg:text-right'>
-              <h1 className='text-5xl sm:text-6xl md:text-7xl lg:text-6xl font-bold text-primary-900 font-display leading-tight'>
+              <h1 className='text-4xl sm:text-6xl md:text-7xl lg:text-6xl font-bold text-primary-900 font-display leading-tight'>
                 Structured Bitcoin Learning
               </h1>
               <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-medium text-primary-700 font-display mt-2 mb-6'>

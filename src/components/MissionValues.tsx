@@ -18,7 +18,7 @@ export function MissionValues() {
     },
     {
       title: "Fiercely local & personal",
-      description: "We are a Melbourne business at heart and believe trust is earned through face‑to‑face interactions and transparency. Building relationships with you in person is central to how we work."
+      description: "We are Melbourne based and can travel interstate on request. We believe trust is earned through face‑to‑face interactions and transparency. Building relationships with you in person is central to how we work."
     }
   ];
 

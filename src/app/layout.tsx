@@ -38,7 +38,6 @@ export const metadata: Metadata = {
     title: 'Bitcoin Treasury Solutions - Structured Bitcoin Learning',
     description: 'Structured Bitcoin Learning for Australia\'s Professionals. Training, consulting, and public events to help your organisation understand Bitcoin and implement advanced self-custody strategies.',
     emails: ['enquiry@btreasury.com.au'],
-    phoneNumbers: ['+61 422 020 000'],
     countryName: 'Australia',
     images: [
       {
@@ -53,7 +52,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Bitcoin Treasury Solutions - Structured Bitcoin Learning',
     description: 'Structured Bitcoin Learning for Australia\'s Professionals. Training, consulting, and public events.',
-    site: '@btreasury',
+    site: '@btreasuryau',
+    creator: '@btreasuryau',
     images: ['/images/bts_opengraph.jpg'],
   },
   robots: {
@@ -116,15 +116,20 @@ export default function RootLayout({
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+61-422-020-000",
       "email": "enquiry@btreasury.com.au",
-      "contactType": "Customer Service"
+      "contactType": "Customer Service",
+      "url": "https://calendly.com/carri27/30min"
     },
     "founder": {
       "@type": "Organization",
       "name": "Avuncular Group Pty Ltd",
       "legalName": "Avuncular Group Pty Ltd ABN 82 683 088 173"
-    }
+    },
+    "sameAs": [
+      "https://x.com/btreasuryau",
+      "https://www.youtube.com/channel/UCfl6Ad-fNMLXRAN7rAGuTlQ",
+      "https://www.linkedin.com/company/btreasury/"
+    ]
   };
 
   return (

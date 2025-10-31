@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ExternalLink } from 'lucide-react';
 import { Container } from '@/components/Container';
 import { ContactForm } from '@/components/ContactForm';
 
@@ -7,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Get in touch with Bitcoin Treasury Solutions. Ready to start your Bitcoin education journey? Contact us for workshops, training, and consultations.',
   openGraph: {
     title: 'Contact Us | Bitcoin Treasury Solutions',
-    description: 'Get in touch with Bitcoin Treasury Solutions for Bitcoin education workshops, training, and consultations in Melbourne.',
+    description: 'Get in touch with Bitcoin Treasury Solutions for Bitcoin education workshops, training, and consultations. Melbourne based, interstate available.',
   },
 };
 
@@ -57,14 +59,20 @@ export default function Contact() {
                 <div className='flex items-start space-x-3'>
                   <div className='w-6 h-6 text-accent-500 mt-1'>
                     <svg fill='none' stroke='currentColor' viewBox='0 0 24 24'>
-                      <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z' />
+                      <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' />
                     </svg>
                   </div>
                   <div>
-                    <p className='font-semibold text-primary-900'>Phone</p>
-                    <a href='tel:+61422020000' className='text-primary-700 hover:text-accent-600 transition-colors'>
-                      +61 422 020 000
-                    </a>
+                    <p className='font-semibold text-primary-900'>Schedule a Call</p>
+                    <Link
+                      href='https://calendly.com/carri27/30min'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='inline-flex items-center gap-1 text-primary-700 hover:text-accent-600 transition-colors'
+                    >
+                      Book a time
+                      <ExternalLink className='w-4 h-4' />
+                    </Link>
                   </div>
                 </div>
 
@@ -94,7 +102,7 @@ export default function Contact() {
               
               <div className='space-y-4'>
                 <p className='text-primary-700 font-body leading-relaxed'>
-                  Join our small-group workshops in Melbourne designed for curious investors aged 35 and over. Sessions are kept small so you can ask questions and get personalised guidance.
+                  Join our small-group workshops designed for curious investors aged 35 and over. Melbourne based, interstate on request. Sessions are kept small so you can ask questions and get personalised guidance.
                 </p>
                 
                 <div className='bg-accent-50 p-6 rounded-lg border-l-4 border-accent-500'>

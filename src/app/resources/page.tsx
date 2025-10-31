@@ -7,6 +7,44 @@ import { BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function Resources() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage('');
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setMessage('Successfully subscribed!');
+        setEmail('');
+        setTimeout(() => {
+          setIsSuccess(false);
+          setMessage('');
+        }, 3000);
+      } else {
+        setMessage(data.error || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      setMessage('Network error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const featuredResources = [
     {
@@ -154,6 +192,43 @@ export default function Resources() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Newsletter CTA Card */}
+          <div className='mb-20'>
+            <div className='bg-gradient-to-br from-accent-500 to-accent-600 p-8 md:p-12 rounded-lg shadow-lg text-center'>
+              <h3 className='text-2xl md:text-3xl font-bold text-white font-display mb-3'>
+                Stay Informed with Our Newsletter
+              </h3>
+              <p className='text-accent-50 text-lg md:text-base font-body mb-6 max-w-2xl mx-auto'>
+                Get the latest Bitcoin news affecting Australians and stay informed about new events and educational resources.
+              </p>
+              <form onSubmit={handleNewsletterSubmit} className='max-w-md mx-auto'>
+                <div className='flex flex-col sm:flex-row gap-3'>
+                  <input
+                    type='email'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder='Enter your email address'
+                    required
+                    disabled={isSubmitting || isSuccess}
+                    className='flex-1 px-4 py-3 bg-white border border-accent-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-accent-500 font-body text-base text-primary-900 placeholder:text-primary-400 disabled:bg-gray-100 disabled:cursor-not-allowed'
+                  />
+                  <button
+                    type='submit'
+                    disabled={isSubmitting || isSuccess}
+                    className='px-6 py-3 bg-white text-accent-600 font-semibold rounded-lg hover:bg-accent-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer font-display text-base whitespace-nowrap'
+                  >
+                    {isSubmitting ? 'Subscribing...' : isSuccess ? 'Subscribed!' : 'Subscribe'}
+                  </button>
+                </div>
+                {message && (
+                  <p className={`mt-3 text-base ${message.includes('Success') ? 'text-white' : 'text-red-200'}`}>
+                    {message}
+                  </p>
+                )}
+              </form>
             </div>
           </div>
 

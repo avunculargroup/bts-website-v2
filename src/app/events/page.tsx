@@ -17,11 +17,12 @@ export default function Events() {
         <div className='max-w-4xl mx-auto'>
           {/* Page Header */}
           <div className='text-center mb-16'>
+            <Calendar className='mx-auto h-16 w-16 text-accent-500 mb-4' />
             <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-900 font-display mb-6'>
               Events
             </h1>
             <p className='text-xl text-primary-700 font-body leading-relaxed'>
-              Join us for educational workshops and community events in Melbourne
+              Join us for educational workshops and community events. Melbourne based, interstate available on request.
             </p>
           </div>
 
@@ -45,7 +46,7 @@ export default function Events() {
                 Join the Waitlist
               </h3>
               <p className='text-primary-700 font-body text-sm mb-6'>
-                Get notified when we announce new workshops and events in Melbourne.
+                Get notified when we announce new workshops and events.
               </p>
               
               <Button 
@@ -106,10 +107,10 @@ export default function Events() {
                   <MapPin className='w-6 h-6 text-accent-600' />
                 </div>
                 <h3 className=' font-semibold text-primary-900 font-display mb-2'>
-                  Melbourne Based
+                  Melbourne Based, interstate on request.
                 </h3>
                 <p className='text-primary-700 font-body text-sm'>
-                  Convenient locations in Melbourne with easy access to public transport.
+                  Convenient locations in Melbourne with easy access to public transport, or we can travel to your location.
                 </p>
               </div>
             </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Compass, TrendingUp, ShieldCheck, Target, Lightbulb, Users, TrendingDown, Map, DollarSign, Wallet } from 'lucide-react';
+import { Compass, TrendingUp, ShieldCheck, Target, Lightbulb, Users, TrendingDown, Map, DollarSign, Wallet, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { BookSessionModal } from '@/components/BookSessionModal';
@@ -31,7 +31,7 @@ export function HeroCTA() {
             </h2>
             <div className='space-y-4 max-w-4xl mx-auto'>
               <p className=' text-primary-800 font-body leading-relaxed'>
-                BTS empowers companies and individuals to explore bitcoin as part of a diversified investment strategy. We offer small, in‑person sessions in Melbourne where experienced coaches demystify Bitcoin and show how it can fit into your financial plan.
+                BTS empowers companies and individuals to explore bitcoin as part of a diversified investment strategy. We offer small, in‑person sessions. Melbourne Based, Interstate available. Our experienced coaches demystify Bitcoin and show how it can fit into your financial plan.
               </p>
               <p className=' text-primary-800 font-body leading-relaxed'>
                 There is no hype and no promises of fast fortunes—just practical education that builds confidence for slow, certain growth. Join us to reclaim control over your money and prepare for the future.
@@ -123,11 +123,22 @@ export function HeroCTA() {
             <p className='text-2xl font-semibold text-accent-600 font-display mb-6'>
               only $195pp
             </p>
-            <button className='bg-accent-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base'
-              onClick={() => { setCurrentSessionType('Corporate & SME'); setIsBookModalOpen(true); }}
-            >
-              Book Session
-            </button>
+            <div className='flex flex-col sm:flex-row gap-3 justify-center items-center'>
+              <button className='bg-accent-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base'
+                onClick={() => { setCurrentSessionType('Corporate & SME'); setIsBookModalOpen(true); }}
+              >
+                Book Session
+              </button>
+              <a
+                href='https://calendly.com/carri27/30min'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-flex items-center justify-center bg-transparent border-2 border-primary-900 text-primary-900 py-3 px-8 rounded-lg font-semibold hover:bg-primary-900 hover:text-white transition-colors duration-300 cursor-pointer font-display text-base'
+              >
+                Schedule a call
+                <ExternalLink className='ml-2 w-4 h-4' />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -189,11 +200,22 @@ export function HeroCTA() {
             <p className='text-2xl font-semibold text-accent-600 font-display mb-6'>
               Only $195pp
             </p>
-            <button className='bg-accent-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base'
-              onClick={() => { setCurrentSessionType('Accountants & Financial Advisors'); setIsBookModalOpen(true); }}
-            >
-              Book Workshop
-            </button>
+            <div className='flex flex-col sm:flex-row gap-3 justify-center items-center'>
+              <button className='bg-accent-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base'
+                onClick={() => { setCurrentSessionType('Accountants & Financial Advisors'); setIsBookModalOpen(true); }}
+              >
+                Book Workshop
+              </button>
+              <a
+                href='https://calendly.com/carri27/30min'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-flex items-center justify-center bg-transparent border-2 border-primary-900 text-primary-900 py-3 px-8 rounded-lg font-semibold hover:bg-primary-900 hover:text-white transition-colors duration-300 cursor-pointer font-display text-base'
+              >
+                Schedule a call
+                <ExternalLink className='ml-2 w-4 h-4' />
+              </a>
+            </div>
           </div>
 
           {/* Testimonial */}

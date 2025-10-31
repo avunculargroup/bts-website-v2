@@ -16,7 +16,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Container } from '@/components/Container';
 
@@ -31,9 +31,22 @@ const navigationItems = [
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className='sticky top-0 z-50 w-full border-b border-primary-200 bg-primary-950 backdrop-blur supports-[backdrop-filter]:bg-primary-950'>
+    <header className={cn(
+      'sticky top-0 z-50 w-full bg-primary-950 backdrop-blur supports-[backdrop-filter]:bg-primary-950 transition-shadow duration-300',
+      isScrolled && 'shadow-lg shadow-black/10'
+    )}>
       <Container className='flex h-12 items-center justify-between'>
         {/* Logo */}
         <Link href='/' className='flex items-center space-x-2'>

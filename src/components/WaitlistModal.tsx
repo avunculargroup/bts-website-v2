@@ -93,7 +93,7 @@ export function WaitlistModal({ isOpen, onClose }: WaitlistModalProps) {
             Join the Waitlist
           </h2>
           <p className='text-primary-700 font-body mb-6'>
-            Be the first to know when we announce new workshops and events in Melbourne.
+            Be the first to know when we announce new workshops and events.
           </p>
 
           {!isSuccess ? (

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Users } from 'lucide-react';
 import { Container } from '@/components/Container';
 import { OurStory } from '@/components/OurStory';
 import { MissionValues } from '@/components/MissionValues';
@@ -20,6 +21,7 @@ export default function About() {
         <div className='max-w-4xl mx-auto'>
           {/* Page Header */}
           <div className='text-center mb-16'>
+            <Users className='mx-auto h-16 w-16 text-accent-500 mb-4' />
             <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-900 font-display mb-6'>
               About Us
             </h1>
