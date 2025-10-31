@@ -11,6 +11,7 @@ interface DatePickerProps {
   minDate?: Date;
   maxDate?: Date;
   className?: string;
+  id?: string;
 }
 
 export function DatePicker({ 
@@ -20,7 +21,8 @@ export function DatePicker({
   disabled = false,
   minDate,
   maxDate,
-  className = ''
+  className = '',
+  id
 }: DatePickerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
@@ -146,6 +148,7 @@ export function DatePicker({
       <div className='relative'>
         <input
           ref={inputRef}
+          id={id}
           type='text'
           value={inputValue}
           onChange={handleInputChange}
@@ -160,6 +163,7 @@ export function DatePicker({
           type='button'
           onClick={() => setIsOpen(!isOpen)}
           disabled={disabled}
+          aria-label='Open date picker calendar'
           className='absolute right-2 top-1/2 transform -translate-y-1/2 text-primary-500 hover:text-primary-700 transition-colors'
         >
           <Calendar className='h-4 w-4' />
@@ -187,6 +191,7 @@ export function DatePicker({
                     const newDate = new Date(currentYear, currentMonth - 1, 1);
                     onChange(newDate);
                   }}
+                  aria-label='Previous month'
                   className='p-1 hover:bg-primary-100 rounded'
                 >
                   <ChevronDown className='h-4 w-4 rotate-90' />
@@ -196,6 +201,7 @@ export function DatePicker({
                     const newDate = new Date(currentYear, currentMonth + 1, 1);
                     onChange(newDate);
                   }}
+                  aria-label='Next month'
                   className='p-1 hover:bg-primary-100 rounded'
                 >
                   <ChevronDown className='h-4 w-4 -rotate-90' />

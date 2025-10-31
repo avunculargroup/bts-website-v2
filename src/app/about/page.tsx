@@ -1,7 +1,17 @@
+import type { Metadata } from 'next';
 import { Container } from '@/components/Container';
 import { OurStory } from '@/components/OurStory';
 import { MissionValues } from '@/components/MissionValues';
 import { OurTeam } from '@/components/OurTeam';
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'Learn about Bitcoin Treasury Solutions and our mission to provide structured Bitcoin learning for Australia\'s professionals. Meet our team and discover our story.',
+  openGraph: {
+    title: 'About Us | Bitcoin Treasury Solutions',
+    description: 'Learn about Bitcoin Treasury Solutions and our mission to provide structured Bitcoin learning for Australia\'s professionals.',
+  },
+};
 
 export default function About() {
   return (

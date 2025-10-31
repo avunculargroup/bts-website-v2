@@ -44,7 +44,7 @@ export function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <NavigationMenu className='hidden md:flex'>
+        <NavigationMenu className='hidden md:flex' role='navigation' aria-label='Main navigation'>
           <NavigationMenuList className='flex items-center space-x-1 m-0'>
             {navigationItems.map((item) => (
               <NavigationMenuItem key={item.href}>

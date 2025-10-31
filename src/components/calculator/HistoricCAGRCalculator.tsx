@@ -139,10 +139,11 @@ export function HistoricCAGRCalculator() {
               {/* Date Range */}
               <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <div>
-                  <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
+                  <label htmlFor='startDate' className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                     Start Date *
                   </label>
                   <DatePicker
+                    id='startDate'
                     value={startDate}
                     onChange={setStartDate}
                     maxDate={endDate || undefined}
@@ -150,10 +151,11 @@ export function HistoricCAGRCalculator() {
                   />
                 </div>
                 <div>
-                  <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
+                  <label htmlFor='endDate' className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                     End Date *
                   </label>
                   <DatePicker
+                    id='endDate'
                     value={endDate}
                     onChange={setEndDate}
                     minDate={startDate || undefined}
@@ -164,11 +166,12 @@ export function HistoricCAGRCalculator() {
 
               {/* Investment Amount */}
               <div>
-                <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
+                <label htmlFor='investmentAmount' className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                   Initial Investment *
                 </label>
                 <div className='flex rounded-lg shadow-sm'>
                   <input
+                    id='investmentAmount'
                     type='number'
                     value={investmentAmount}
                     onChange={(e) => setInvestmentAmount(e.target.value)}
@@ -189,10 +192,11 @@ export function HistoricCAGRCalculator() {
               {/* Bitcoin Prices */}
               <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <div>
-                  <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
+                  <label htmlFor='startBitcoinPrice' className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                     Bitcoin Price at Start (AUD) *
                   </label>
                   <input
+                    id='startBitcoinPrice'
                     type='number'
                     value={startBitcoinPrice}
                     onChange={(e) => setStartBitcoinPrice(e.target.value)}
@@ -204,10 +208,11 @@ export function HistoricCAGRCalculator() {
                   </p>
                 </div>
                 <div>
-                  <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
+                  <label htmlFor='endBitcoinPrice' className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                     Bitcoin Price at End (AUD) *
                   </label>
                   <input
+                    id='endBitcoinPrice'
                     type='number'
                     value={endBitcoinPrice}
                     onChange={(e) => setEndBitcoinPrice(e.target.value)}

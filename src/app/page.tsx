@@ -7,6 +7,7 @@ import { Services } from '@/components/Services';
 import { Resources } from '@/components/Resources';
 import { HeroImages } from '@/components/HeroImages';
 import { HeroCTA } from '@/components/HeroCTA';
+import { AboutUs } from '@/components/AboutUs';
 
 export default function Home() {
   const [isNewsletterModalOpen, setIsNewsletterModalOpen] = useState(false);
@@ -37,9 +38,29 @@ export default function Home() {
               <h1 className='text-5xl sm:text-6xl md:text-7xl lg:text-6xl font-bold text-primary-900 font-display leading-tight'>
                 Structured Bitcoin Learning
               </h1>
-              <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-medium text-primary-700 font-display mt-2'>
+              <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-medium text-primary-700 font-display mt-2 mb-6'>
                 for Australia&apos;s Professionals.
               </h2>
+              <div className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-end'>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById('hero-cta');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }}
+                  className='inline-flex items-center justify-center px-6 py-3 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition-colors duration-300 font-display text-base'
+                >
+                  Learn More
+                </button>
+                <button
+                  onClick={() => setIsNewsletterModalOpen(true)}
+                  className='inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-primary-900 text-primary-900 font-semibold rounded-lg hover:bg-primary-900 hover:text-white transition-colors duration-300 font-display text-base'
+                >
+                  Subscribe
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -52,16 +73,16 @@ export default function Home() {
       <Resources />
 
       {/* Calculator CTA Section */}
-      <div className='py-16 lg:py-24 bg-accent-50'>
+      <div className='py-16 lg:py-24 bg-primary-950'>
         <div className='max-w-6xl mx-auto px-8'>
           <div className='text-center mb-12'>
             <div className='flex justify-center mb-4'>
-              <Calculator className='w-12 h-12 text-accent-600' />
+              <Calculator className='w-12 h-12 text-accent-500' />
             </div>
-            <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 font-display mb-6'>
+            <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary-50 font-display mb-6'>
               Bitcoin CAGR Calculator
             </h2>
-            <p className='text-xl text-primary-700 font-body leading-relaxed max-w-3xl mx-auto'>
+            <p className='text-xl text-secondary-100 font-body leading-relaxed max-w-3xl mx-auto'>
               Calculate historic performance and project future value with our comprehensive Bitcoin CAGR calculator. 
               Includes Australian tax scenarios and asset comparisons.
             </p>
@@ -92,6 +113,9 @@ export default function Home() {
 
       {/* Services Section */}
       <Services />
+
+      {/* About Us Section */}
+      <AboutUs />
 
       {/* Newsletter Modal */}
       <NewsletterModal 

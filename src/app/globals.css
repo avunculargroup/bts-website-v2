@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* CSS Custom Properties for Colors and Fonts */
 :root {
   /* Primary Colors - Navy */

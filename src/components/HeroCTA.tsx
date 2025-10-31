@@ -20,7 +20,7 @@ export function HeroCTA() {
 
   return (
     <>
-      <div className='bg-accent-100 py-16 lg:py-24'>
+      <div id='hero-cta' className='bg-accent-100 py-16 lg:py-24'>
         <div className='w-full max-w-6xl px-8 mx-auto'>
           <div className='text-center mb-12'>
             <div className='flex justify-center mb-6'>
@@ -43,18 +43,21 @@ export function HeroCTA() {
           <div className='flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center'>
             <button 
               onClick={() => scrollToSection('corporate-sme')}
+              aria-label='Navigate to Corporate & SME section'
               className='w-full sm:w-auto bg-accent-500 text-white py-4 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base '
             >
               Corporate & SME
             </button>
             <button 
               onClick={() => scrollToSection('accountants-advisors')}
+              aria-label='Navigate to Accountants & Financial Advisors section'
               className='w-full sm:w-auto bg-accent-500 text-white py-4 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base '
             >
               Accountants & Financial Advisors
             </button>
             <button 
               onClick={() => scrollToSection('individuals')}
+              aria-label='Navigate to Individuals section'
               className='w-full sm:w-auto bg-accent-500 text-white py-4 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base '
             >
               Individuals
@@ -181,7 +184,7 @@ export function HeroCTA() {
 
           <div className='bg-accent-50 p-8 rounded-lg border-l-4 border-accent-500 text-center'>
             <p className=' text-primary-800 font-body leading-relaxed mb-4'>
-              Schedule a 1-hour customized, in-house introductory workshop for your firm&apos;s staff here
+              Schedule a 1-hour customised, in-house introductory workshop for your firm&apos;s staff here
             </p>
             <p className='text-2xl font-semibold text-accent-600 font-display mb-6'>
               Only $195pp

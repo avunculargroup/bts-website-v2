@@ -1,5 +1,15 @@
+import type { Metadata } from 'next';
 import { Container } from '@/components/Container';
 import { ContactForm } from '@/components/ContactForm';
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'Get in touch with Bitcoin Treasury Solutions. Ready to start your Bitcoin education journey? Contact us for workshops, training, and consultations.',
+  openGraph: {
+    title: 'Contact Us | Bitcoin Treasury Solutions',
+    description: 'Get in touch with Bitcoin Treasury Solutions for Bitcoin education workshops, training, and consultations in Melbourne.',
+  },
+};
 
 export default function Contact() {
   return (

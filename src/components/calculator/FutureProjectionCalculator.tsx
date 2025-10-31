@@ -153,10 +153,11 @@ export function FutureProjectionCalculator() {
             <div className='space-y-4'>
               {/* Current Holdings */}
               <div>
-                <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
+                <label htmlFor='currentBTC' className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                   Current Bitcoin Holdings (BTC) *
                 </label>
                 <input
+                  id='currentBTC'
                   type='number'
                   value={currentBTC}
                   onChange={(e) => setCurrentBTC(e.target.value)}
@@ -168,10 +169,11 @@ export function FutureProjectionCalculator() {
 
               {/* Current Price */}
               <div>
-                <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
+                <label htmlFor='currentPrice' className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                   Current Bitcoin Price (AUD) *
                 </label>
                 <input
+                  id='currentPrice'
                   type='number'
                   value={currentPrice}
                   onChange={(e) => setCurrentPrice(e.target.value)}
@@ -203,10 +205,11 @@ export function FutureProjectionCalculator() {
 
               {/* Projection Years */}
               <div>
-                <label className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
+                <label htmlFor='projectionYears' className='block text-base md:text-lg font-medium text-primary-800 mb-2'>
                   Projection Horizon (Years) *
                 </label>
                 <input
+                  id='projectionYears'
                   type='number'
                   value={projectionYears}
                   onChange={(e) => setProjectionYears(e.target.value)}

@@ -30,6 +30,7 @@ export function HelpDrawer({ isOpen, onClose }: HelpDrawerProps) {
             </h2>
             <button
               onClick={onClose}
+              aria-label='Close help drawer'
               className='text-primary-500 hover:text-primary-700 transition-colors'
             >
               <X className='h-5 w-5' />
@@ -43,6 +44,8 @@ export function HelpDrawer({ isOpen, onClose }: HelpDrawerProps) {
               <div className='border border-primary-200 rounded-lg'>
                 <button
                   onClick={() => toggleSection('cagr')}
+                  aria-label='Toggle CAGR Formula section'
+                  aria-expanded={expandedSection === 'cagr'}
                   className='w-full flex items-center justify-between p-4 text-left hover:bg-primary-50 transition-colors'
                 >
                   <span className='font-medium text-primary-900'>CAGR Formula</span>
@@ -74,6 +77,8 @@ export function HelpDrawer({ isOpen, onClose }: HelpDrawerProps) {
               <div className='border border-primary-200 rounded-lg'>
                 <button
                   onClick={() => toggleSection('cgt')}
+                  aria-label='Toggle Australian CGT Rules section'
+                  aria-expanded={expandedSection === 'cgt'}
                   className='w-full flex items-center justify-between p-4 text-left hover:bg-primary-50 transition-colors'
                 >
                   <span className='font-medium text-primary-900'>Australian CGT Rules</span>
@@ -104,6 +109,8 @@ export function HelpDrawer({ isOpen, onClose }: HelpDrawerProps) {
               <div className='border border-primary-200 rounded-lg'>
                 <button
                   onClick={() => toggleSection('ifrs')}
+                  aria-label='Toggle IFRS Accounting section'
+                  aria-expanded={expandedSection === 'ifrs'}
                   className='w-full flex items-center justify-between p-4 text-left hover:bg-primary-50 transition-colors'
                 >
                   <span className='font-medium text-primary-900'>IFRS Accounting</span>
@@ -134,6 +141,8 @@ export function HelpDrawer({ isOpen, onClose }: HelpDrawerProps) {
               <div className='border border-primary-200 rounded-lg'>
                 <button
                   onClick={() => toggleSection('risks')}
+                  aria-label='Toggle Risk Warnings section'
+                  aria-expanded={expandedSection === 'risks'}
                   className='w-full flex items-center justify-between p-4 text-left hover:bg-primary-50 transition-colors'
                 >
                   <span className='font-medium text-primary-900'>Risk Warnings</span>
@@ -162,6 +171,8 @@ export function HelpDrawer({ isOpen, onClose }: HelpDrawerProps) {
               <div className='border border-primary-200 rounded-lg'>
                 <button
                   onClick={() => toggleSection('sources')}
+                  aria-label='Toggle Data Sources & Price Input section'
+                  aria-expanded={expandedSection === 'sources'}
                   className='w-full flex items-center justify-between p-4 text-left hover:bg-primary-50 transition-colors'
                 >
                   <span className='font-medium text-primary-900'>Data Sources & Price Input</span>
