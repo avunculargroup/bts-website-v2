@@ -236,7 +236,9 @@ export function HeroCTA() {
               </div>
               <div className='text-center max-w-2xl'>
                 <p className='text-2xl text-primary-900 font-body italic mb-4 leading-relaxed'>
-                  &quot;As trusted advisors, we can&apos;t put our heads in the sand. We need to learn what Bitcoin is so we can talk to clients about structuring things or have a decent conversation.&quot;
+                  &quot;A lot of our clients have asked us about Bitcoin, what our opinion is, what we know about it,
+                  whether they should be buying it. It came at a really good time, meeting the Bitcoin Treasury
+                  Solutions team.&quot;
                 </p>
                 <div className='flex items-center justify-center gap-3'>
                   <p className='text-lg font-semibold text-accent-700 font-display mb-0'>
