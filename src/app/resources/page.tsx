@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Container } from '@/components/Container';
-import { BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
+import { BookOpen, ChevronDown, ChevronUp, Heart, ArrowRight } from 'lucide-react';
 
 export default function Resources() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -254,6 +255,34 @@ export default function Resources() {
                   allowFullScreen
                   className='w-full h-full rounded-lg'
                 ></iframe>
+              </div>
+            </div>
+          </div>
+
+          {/* Bitcoin Through Values Feature Card */}
+          <div className='mb-20'>
+            <div className='bg-gradient-to-br from-accent-500 to-accent-600 p-8 md:p-12 rounded-lg shadow-lg'>
+              <div className='flex flex-col md:flex-row items-center gap-6 md:gap-8'>
+                <div className='flex-shrink-0'>
+                  <div className='w-16 h-16 rounded-full bg-white/20 flex items-center justify-center'>
+                    <Heart className='w-8 h-8 text-white' />
+                  </div>
+                </div>
+                <div className='flex-1 text-center md:text-left'>
+                  <h3 className='text-2xl md:text-3xl font-bold text-white font-display mb-3'>
+                    Bitcoin Through Values
+                  </h3>
+                  <p className='text-accent-50 text-lg md:text-base font-body mb-4 max-w-2xl'>
+                    Create a personalised Bitcoin guide based on values that matter to your colleague, board member, friend or loved one. Select values that resonate and generate a customised explanation.
+                  </p>
+                  <Link
+                    href='/values'
+                    className='inline-flex items-center gap-2 px-6 py-3 bg-white text-accent-600 font-semibold rounded-lg hover:bg-accent-50 transition-colors font-display text-base'
+                  >
+                    Create Your Guide
+                    <ArrowRight className='w-5 h-5' />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

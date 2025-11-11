@@ -189,6 +189,12 @@ export function Footer() {
                 Events
               </Link>
               <Link
+                href='/values'
+                className='text-base md:text-sm text-muted-foreground transition-colors hover:text-foreground'
+              >
+                Bitcoin Through Values
+              </Link>
+              <Link
                 href='/resources#faqs'
                 className='text-base md:text-sm text-muted-foreground transition-colors hover:text-foreground'
               >
