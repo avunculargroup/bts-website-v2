@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/Container';
 import { Calendar, Clock, MapPin, Users } from 'lucide-react';
@@ -64,16 +63,19 @@ export default function Events() {
               What to Expect at Our Events
             </h2>
             
-            {/* Community Image */}
+            {/* Video Embed */}
             <div className='mb-12'>
-              <Image
-                src='/images/crowd.jpg'
-                alt='Community of people learning about Bitcoin together'
-                width={800}
-                height={400}
-                className='rounded-lg shadow-lg mx-auto'
-                priority
-              />
+              <div className='aspect-video max-w-4xl mx-auto'>
+                <iframe
+                  src='https://www.youtube.com/embed/KLC-0dgBjEA'
+                  title='What to Expect at Our Events'
+                  frameBorder='0'
+                  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                  referrerPolicy='strict-origin-when-cross-origin'
+                  allowFullScreen
+                  className='w-full h-full rounded-lg shadow-lg'
+                />
+              </div>
             </div>
             
             <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
