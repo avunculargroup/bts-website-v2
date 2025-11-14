@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
+      // favicon.ico is automatically handled by Next.js when placed in app directory
       { url: '/icon1.png', sizes: '192x192', type: 'image/png' },
       { url: '/icon0.svg', type: 'image/svg+xml' },
     ],
