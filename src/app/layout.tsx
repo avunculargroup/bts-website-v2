@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     countryName: 'Australia',
     images: [
       {
-        url: '/images/bts_opengraph.jpg',
+        url: '/home page share preview.png',
         width: 1200,
         height: 630,
         alt: 'Bitcoin Treasury Solutions - Structured Bitcoin Learning',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     description: 'Structured Bitcoin Learning for Australia\'s Professionals. Training, consulting, and public events.',
     site: '@btreasuryau',
     creator: '@btreasuryau',
-    images: ['/images/bts_opengraph.jpg'],
+    images: ['/home page share preview.png'],
   },
   robots: {
     index: true,
