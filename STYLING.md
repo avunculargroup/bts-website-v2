@@ -1,6 +1,6 @@
 # Styling Documentation
 
-This document outlines the comprehensive styling system implemented for the Avuncular Group corporate website. The design system uses Tailwind CSS v4 with custom CSS variables, ensuring consistency, maintainability, and accessibility across all components.
+This document outlines the comprehensive styling system implemented for Bitcoin Treasury Solutions (BTS) website. The design system uses Tailwind CSS v4 with custom CSS variables via the `@theme inline` directive, ensuring consistency, maintainability, and accessibility across all components.
 
 ## Table of Contents
 
@@ -10,6 +10,11 @@ This document outlines the comprehensive styling system implemented for the Avun
 - [Components](#components)
 - [Usage Examples](#usage-examples)
 - [Best Practices](#best-practices)
+- [Custom Animations](#custom-animations)
+- [Tailwind Configuration](#tailwind-configuration)
+- [Technical Implementation](#technical-implementation)
+- [File Structure](#file-structure)
+- [Maintenance](#maintenance)
 
 ## Color System
 
@@ -71,19 +76,19 @@ The accent palette uses vibrant orange tones for calls-to-action and emphasis.
 
 | Color | Hex Code | Usage |
 |-------|----------|-------|
-| Background | `#fefefe` | Main page background |
-| Foreground | `#102a43` | Primary text color |
+| Background | `#fff7ed` | Main page background (accent-50) |
+| Foreground | `#102a43` | Primary text color (primary-900) |
 | Card | `#ffffff` | Card backgrounds |
-| Card Foreground | `#102a43` | Card text |
+| Card Foreground | `#102a43` | Card text (primary-900) |
 | Popover | `#ffffff` | Popover backgrounds |
-| Popover Foreground | `#102a43` | Popover text |
+| Popover Foreground | `#102a43` | Popover text (primary-900) |
 | Muted | `#f8fafc` | Muted backgrounds |
 | Muted Foreground | `#64748b` | Muted text |
 | Destructive | `#ef4444` | Error states, delete actions |
 | Destructive Foreground | `#ffffff` | Text on destructive elements |
 | Border | `#e2e8f0` | Borders, dividers |
 | Input | `#e2e8f0` | Input field borders |
-| Ring | `#334e68` | Focus rings |
+| Ring | `#334e68` | Focus rings (primary-700) |
 
 ## Typography
 
@@ -119,7 +124,7 @@ Our typography system uses Source Sans 3 for headings and Neuton for body text, 
 | h4 | `1.25rem` (20px) | 600 | 1.2 | Card headings | Source Sans 3 |
 | h5 | `1.125rem` (18px) | 600 | 1.2 | Small headings | Source Sans 3 |
 | h6 | `1rem` (16px) | 600 | 1.2 | Minor headings | Source Sans 3 |
-| Body | `1rem` (16px) | 400 | 1.6 | Body text, paragraphs | Neuton |
+| Body | `1.375rem` (22px) | 400 | 1.6 | Body text, paragraphs | Neuton |
 
 ## Spacing & Layout
 
@@ -284,18 +289,72 @@ A utility component for consistent max-width and responsive padding.
 
 ### Performance
 
-1. **Font Loading**: Source Sans 3 and Neuton fonts are loaded via Next.js for optimal performance
-2. **CSS Variables**: Colors and fonts are defined as CSS variables for efficient updates
-3. **Tailwind Integration**: Design tokens are integrated with Tailwind for consistent usage
+1. **Font Loading**: Source Sans 3 and Neuton fonts are loaded via Next.js `next/font/google` for optimal performance with automatic font optimization
+2. **CSS Variables**: Colors and fonts are defined as CSS variables for efficient updates and theming
+3. **Tailwind v4 Integration**: Design tokens are integrated with Tailwind v4 using `@theme inline` directive for zero-config theme access
 4. **No Dark Mode**: Single theme reduces complexity and improves performance
+5. **Smooth Scrolling**: `scroll-behavior: smooth` enabled globally for better UX
+
+## Custom Animations
+
+### Scroll Indicator Animation
+
+A smooth bounce animation for scroll indicators:
+
+```css
+@keyframes scroll-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.animate-scroll-bounce {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+```
+
+**Usage:**
+```jsx
+<ChevronDown className='animate-scroll-bounce' />
+```
+
+### Compass Animations
+
+Specialized animations for compass needle stabilization effects (used in specific components):
+
+- `.animate-stabilize` - North needle stabilization (8s infinite)
+- `.animate-stabilize-south` - South needle stabilization (8s infinite)
+
+## Tailwind Configuration
+
+### Custom Font Size Scale
+
+The Tailwind config extends the default font size scale with custom values:
+
+| Size | Font Size | Line Height | Usage |
+|------|-----------|-------------|-------|
+| xs | `0.875rem` (14px) | 1.4 | Extra small text |
+| sm | `1rem` (16px) | 1.5 | Small text |
+| base | `1.125rem` (18px) | 1.6 | Base text size |
+| lg | `1.875rem` (30px) | 1.6 | Large text |
+| xl | `2.125rem` (34px) | 1.5 | Extra large text |
+| 2xl | `2rem` (32px) | 1.4 | 2x large |
+| 3xl | `2.5rem` (40px) | 1.3 | 3x large |
+| 4xl | `3rem` (48px) | 1.2 | 4x large |
+| 5xl | `3.75rem` (60px) | 1.1 | 5x large |
+| 6xl | `4.5rem` (72px) | 1.1 | 6x large |
+| 7xl | `5.25rem` (84px) | 1 | 7x large |
 
 ## File Structure
 
 ```
 src/
 ├── app/
-│   ├── globals.css          # Global styles and CSS variables
-│   └── layout.tsx           # Root layout with font loading
+│   ├── globals.css          # Global styles, CSS variables, and @theme inline
+│   └── layout.tsx           # Root layout with Next.js font loading
 ├── components/
 │   ├── Container.tsx        # Layout utility component
 │   ├── Header.tsx           # Navigation header
@@ -303,6 +362,59 @@ src/
 └── lib/
     └── utils.ts             # Utility functions (cn)
 ```
+
+## Technical Implementation
+
+### Tailwind CSS v4
+
+This project uses Tailwind CSS v4 with the new `@theme inline` directive for theme configuration:
+
+```css
+@import 'tailwindcss';
+@theme inline {
+  /* Theme tokens defined here */
+}
+```
+
+This approach allows CSS variables to be directly integrated into Tailwind's theme system without requiring a separate config file for all tokens.
+
+### Font Loading
+
+Fonts are loaded using Next.js's `next/font/google` for optimal performance:
+
+```typescript
+const neuton = Neuton({
+  subsets: ['latin'],
+  variable: '--font-neuton',
+  weight: '400',
+});
+
+const sourceSans3 = Source_Sans_3({
+  subsets: ['latin'],
+  variable: '--font-source-sans',
+  weight: ['400', '600', '700'],
+});
+```
+
+Font variables are then referenced in CSS:
+```css
+--font-body: var(--font-neuton), 'Neuton', serif;
+--font-display: var(--font-source-sans), 'Source Sans 3', ...;
+```
+
+### Base Styles Reset
+
+The design system includes a comprehensive base styles reset in the `@layer base` section:
+
+- **Box-sizing**: All elements use `border-box`
+- **Margin/Padding Reset**: Global reset for consistent spacing
+- **HTML**: Base line-height (1.5), text-size-adjust, and tab-size
+- **Body**: Font family (Neuton), size (1.375rem), line-height (1.6), and font smoothing
+- **Headings**: All headings use Source Sans 3 with consistent weights and line-heights
+- **Links**: Primary color with hover transition
+- **Focus States**: Visible focus indicators using ring color
+- **Images**: Responsive by default with block display
+- **Forms**: Inherit font family and size for consistency
 
 ## Maintenance
 

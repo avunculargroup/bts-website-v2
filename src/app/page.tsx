@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <div className='w-full'>
       {/* Hero Section */}
-      <div className='h-[calc(100vh-3rem)] max-h-[calc(100vh-3rem)] lg:h-[calc(100vh-3rem)] lg:max-h-[calc(100vh-3rem)] bg-transparent flex flex-col lg:flex-row items-center justify-center relative overflow-hidden gap-0 lg:gap-0'>
+      <div className='h-[calc(100dvh-3rem)] max-h-[calc(100dvh-3rem)] lg:h-[calc(100vh-3rem)] lg:max-h-[calc(100vh-3rem)] bg-transparent flex flex-col lg:flex-row items-center justify-center relative overflow-hidden gap-0 lg:gap-0'>
         {/* Background Pattern */}
         <div 
           className='absolute inset-0'
@@ -28,14 +28,14 @@ export default function Home() {
           }}
         />
         {/* Hero Content */}
-        <div className='relative z-10 w-full flex flex-col lg:flex-row items-center justify-center gap-0 lg:gap-0 lg:py-0'>
+        <div className='relative z-10 w-full flex flex-col lg:flex-row items-center justify-center gap-0 lg:gap-0 lg:py-0 py-4'>
           {/* Hero Video Overlay Component */}
-          <div className='w-full lg:w-1/2 flex justify-center sm:px-20 lg:px-12 lg:pr-8 mb-4 sm:mb-6 lg:mb-0 lg:items-center bg-transparent'>
+          <div className='w-full lg:w-1/2 flex justify-center sm:px-20 lg:px-12 lg:pr-8 mb-2 sm:mb-4 lg:mb-0 lg:items-center bg-transparent shrink-0'>
             <HeroVideoOverlay onPlayClick={() => setIsVideoModalOpen(true)} />
           </div>
           
           {/* Slogan - Below on mobile, right on desktop */}
-          <div className='w-full lg:w-1/2 flex items-center justify-center sm:px-20 px-16 lg:px-12 lg:pl-8'>
+          <div className='w-full lg:w-1/2 flex items-center justify-center sm:px-20 px-16 lg:px-12 lg:pl-8 shrink-0'>
             <div className='text-center lg:text-right'>
               <h1 className='text-4xl sm:text-6xl md:text-7xl lg:text-6xl font-bold text-primary-900 font-display leading-tight'>
                 Structured Bitcoin Learning
