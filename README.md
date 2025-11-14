@@ -298,7 +298,11 @@ For questions about the codebase, architecture, or extracting features:
 
 ## 📄 License
 
-This project is proprietary software. All rights reserved.
+This project is licensed under the **MIT License**.
+
+Copyright (c) 2025 Avuncular Group Pty Ltd
+
+See the [LICENSE](./LICENSE) file for details.
 
 ---
 
