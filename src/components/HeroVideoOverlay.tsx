@@ -1,6 +1,5 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Play } from 'lucide-react';
 
@@ -9,35 +8,25 @@ interface HeroVideoOverlayProps {
 }
 
 export function HeroVideoOverlay({ onPlayClick }: HeroVideoOverlayProps) {
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const checkScreenSize = () => {
-      setIsDesktop(window.innerWidth >= 1024);
-    };
-    
-    // Check on mount
-    checkScreenSize();
-    
-    // Listen for resize events
-    window.addEventListener('resize', checkScreenSize);
-    return () => window.removeEventListener('resize', checkScreenSize);
-  }, []);
-
-  // Use local poster images - desktop and mobile versions
-  const posterUrl = isDesktop 
-    ? '/bts hero poster.png'
-    : '/bts hero poster_mobile.png';
-
   return (
     <div className='relative w-[20rem] h-[12rem] sm:w-[20rem] sm:h-[12rem] md:w-[24rem] md:h-[12rem] lg:w-[35rem] lg:h-[35rem] group'>
       {/* Poster Image */}
       <div className='relative w-full h-full rounded-lg overflow-hidden drop-shadow-lg group-hover:drop-shadow-2xl transition-shadow duration-300'>
+        {/* Mobile Poster - visible on mobile, hidden on desktop */}
         <Image
-          src={posterUrl}
+          src='/bts hero poster_mobile.png'
           alt='Bitcoin Treasury Solutions - Company Video'
           fill
-          className='object-cover'
+          className='object-cover lg:hidden'
+          priority
+          unoptimized
+        />
+        {/* Desktop Poster - hidden on mobile, visible on desktop */}
+        <Image
+          src='/bts hero poster.png'
+          alt='Bitcoin Treasury Solutions - Company Video'
+          fill
+          className='object-cover hidden lg:block'
           priority
           unoptimized
         />
