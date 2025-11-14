@@ -2,20 +2,22 @@
 
 import { useState } from 'react';
 import { NewsletterModal } from '@/components/NewsletterModal';
-import { Calculator } from 'lucide-react';
+import { Calculator, ChevronDown } from 'lucide-react';
 import { Services } from '@/components/Services';
 import { Resources } from '@/components/Resources';
-import { HeroImages } from '@/components/HeroImages';
+import { HeroVideoOverlay } from '@/components/HeroVideoOverlay';
+import { VideoModal } from '@/components/VideoModal';
 import { HeroCTA } from '@/components/HeroCTA';
 import { AboutUs } from '@/components/AboutUs';
 
 export default function Home() {
   const [isNewsletterModalOpen, setIsNewsletterModalOpen] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   return (
     <div className='w-full'>
       {/* Hero Section */}
-      <div className='min-h-fit lg:h-screen bg-transparent flex flex-col lg:flex-row items-center justify-center relative overflow-hidden gap-0 lg:gap-0 py-20 lg:py-0'>
+      <div className='h-[calc(100vh-3rem)] max-h-[calc(100vh-3rem)] lg:h-[calc(100vh-3rem)] lg:max-h-[calc(100vh-3rem)] bg-transparent flex flex-col lg:flex-row items-center justify-center relative overflow-hidden gap-0 lg:gap-0'>
         {/* Background Pattern */}
         <div 
           className='absolute inset-0'
@@ -27,13 +29,13 @@ export default function Home() {
         />
         {/* Hero Content */}
         <div className='relative z-10 w-full flex flex-col lg:flex-row items-center justify-center gap-0 lg:gap-0 lg:py-0'>
-          {/* Hero Images Component */}
+          {/* Hero Video Overlay Component */}
           <div className='w-full lg:w-1/2 flex justify-center sm:px-20 lg:px-12 lg:pr-8 mb-4 sm:mb-6 lg:mb-0 lg:items-center bg-transparent'>
-            <HeroImages />
+            <HeroVideoOverlay onPlayClick={() => setIsVideoModalOpen(true)} />
           </div>
           
           {/* Slogan - Below on mobile, right on desktop */}
-          <div className='w-full lg:w-1/2 flex items-center justify-center sm:px-20 px-16 lg:px-12 lg:pl-8 pb-20'>
+          <div className='w-full lg:w-1/2 flex items-center justify-center sm:px-20 px-16 lg:px-12 lg:pl-8'>
             <div className='text-center lg:text-right'>
               <h1 className='text-4xl sm:text-6xl md:text-7xl lg:text-6xl font-bold text-primary-900 font-display leading-tight'>
                 Structured Bitcoin Learning
@@ -64,6 +66,24 @@ export default function Home() {
             </div>
           </div>
         </div>
+        
+        {/* Animated Scroll Indicator */}
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            const element = document.getElementById('hero-cta');
+            if (element) {
+              element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }}
+          className='flex absolute bottom-4 lg:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex-col items-center justify-center text-primary-900 hover:text-primary-700 transition-colors duration-300 cursor-pointer group'
+          aria-label='Scroll to next section'
+        >
+          <span className='text-sm font-medium mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-display'>
+            Scroll
+          </span>
+          <ChevronDown className='w-12 h-12 lg:w-16 lg:h-16 animate-scroll-bounce opacity-75' />
+        </button>
       </div>
 
       {/* Hero CTA Section */}
@@ -121,6 +141,13 @@ export default function Home() {
       <NewsletterModal 
         isOpen={isNewsletterModalOpen}
         onClose={() => setIsNewsletterModalOpen(false)}
+      />
+
+      {/* Video Modal */}
+      <VideoModal
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+        videoId='KLC-0dgBjEA'
       />
     </div>
   );
