@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/Container';
 import { BookOpen, ChevronDown, ChevronUp, Heart, ArrowRight } from 'lucide-react';
+import { generateBreadcrumbSchema, generateVideoSchema } from '@/lib/structured-data';
 
 export default function Resources() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -126,8 +127,73 @@ export default function Resources() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  // FAQPage structured data
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  // Breadcrumb structured data
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Resources', url: '/resources' },
+  ]);
+
+  // VideoObject structured data for embedded videos
+  const videoSchemas = [
+    generateVideoSchema({
+      name: "Carri from BTS discusses Bitcoin with Sevan Tuna from Alexander Spencer",
+      description: "Watch Carri from BTS discuss Bitcoin with Sevan Tuna from Alexander Spencer, an accounting firm in Camberwell.",
+      videoId: "Bphcovq_VUk",
+    }),
+    generateVideoSchema({
+      name: "Bitcoin Ponzi Scheme Explained",
+      description: "An explanation of why Bitcoin is not a Ponzi scheme and how it differs from fraudulent investment schemes.",
+      videoId: "ebgkAdaf7d0",
+    }),
+    generateVideoSchema({
+      name: "What Is Bitcoin Backed By?",
+      description: "Understanding what gives Bitcoin its value and how it differs from traditional backed currencies.",
+      videoId: "LOEpthZlps0",
+    }),
+    generateVideoSchema({
+      name: "Adam Back - Bitcoin Expert Interview",
+      description: "An interview with Adam Back, a Bitcoin expert and cryptographer.",
+      videoId: "7rHreBFqS7o",
+    }),
+  ];
+
   return (
     <div className='min-h-screen bg-background'>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      {videoSchemas.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
+      ))}
       <Container className='py-16 lg:py-24'>
         <div className='max-w-4xl mx-auto'>
           {/* Page Header */}
@@ -153,7 +219,7 @@ export default function Resources() {
                   <div className='w-full h-48 relative mb-0'>
                     <Image
                       src={resource.image}
-                      alt={resource.title}
+                      alt={`${resource.title} - ${resource.type} cover image from Bitcoin Treasury Solutions resources`}
                       fill
                       className='object-cover'
                     />
@@ -253,6 +319,7 @@ export default function Resources() {
                   frameBorder='0'
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                   allowFullScreen
+                  loading='lazy'
                   className='w-full h-full rounded-lg'
                 ></iframe>
               </div>
@@ -326,6 +393,7 @@ export default function Resources() {
                                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                                 referrerPolicy='strict-origin-when-cross-origin'
                                 allowFullScreen
+                                loading='lazy'
                                 className='w-full h-full rounded-lg'
                               />
                             </div>
@@ -341,6 +409,7 @@ export default function Resources() {
                                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                                 referrerPolicy='strict-origin-when-cross-origin'
                                 allowFullScreen
+                                loading='lazy'
                                 className='w-full h-full rounded-lg'
                               />
                             </div>
@@ -376,6 +445,7 @@ export default function Resources() {
                     allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                     referrerPolicy='strict-origin-when-cross-origin'
                     allowFullScreen
+                    loading='lazy'
                     className='w-full h-full'
                   />
                 </div>

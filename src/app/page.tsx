@@ -9,6 +9,7 @@ import { HeroVideoOverlay } from '@/components/HeroVideoOverlay';
 import { VideoModal } from '@/components/VideoModal';
 import { HeroCTA } from '@/components/HeroCTA';
 import { AboutUs } from '@/components/AboutUs';
+import { HomePageStructuredData } from '@/components/HomePageStructuredData';
 
 export default function Home() {
   const [isNewsletterModalOpen, setIsNewsletterModalOpen] = useState(false);
@@ -16,6 +17,7 @@ export default function Home() {
 
   return (
     <div className='w-full'>
+      <HomePageStructuredData />
       {/* Hero Section */}
       <div className='h-[calc(100dvh-3rem)] max-h-[calc(100dvh-3rem)] lg:h-[calc(100vh-3rem)] lg:max-h-[calc(100vh-3rem)] bg-transparent flex flex-col lg:flex-row items-center justify-center relative overflow-hidden gap-0 lg:gap-0'>
         {/* Background Pattern */}

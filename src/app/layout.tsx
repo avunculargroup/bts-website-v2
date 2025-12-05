@@ -86,6 +86,9 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   alternates: {
     canonical: '/',
+    languages: {
+      'en-AU': 'https://bitcointreasurysolutions.com.au',
+    },
   },
 };
 
@@ -100,11 +103,13 @@ export default function RootLayout({
 }>) {
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
+    "@type": ["EducationalOrganization", "LocalBusiness"],
     "name": "Bitcoin Treasury Solutions",
     "alternateName": "BTS",
+    "@id": "https://bitcointreasurysolutions.com.au",
     "url": "https://bitcointreasurysolutions.com.au",
     "logo": "https://bitcointreasurysolutions.com.au/images/logo.svg",
+    "image": "https://bitcointreasurysolutions.com.au/images/logo.svg",
     "description": "Structured Bitcoin Learning for Australia's Professionals. Training, consulting, and public events to help your organisation understand Bitcoin, accept and store it safely, and implement advanced self-custody strategies.",
     "address": {
       "@type": "PostalAddress",
@@ -114,17 +119,29 @@ export default function RootLayout({
       "postalCode": "3000",
       "addressCountry": "AU"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -37.8136,
+      "longitude": 144.9631
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "enquiry@btreasury.com.au",
       "contactType": "Customer Service",
-      "url": "https://calendly.com/carri27/30min"
+      "url": "https://calendly.com/carri27/30min",
+      "areaServed": "AU",
+      "availableLanguage": "en-AU"
     },
     "founder": {
       "@type": "Organization",
       "name": "Avuncular Group Pty Ltd",
       "legalName": "Avuncular Group Pty Ltd ABN 82 683 088 173"
     },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Australia"
+    },
+    "priceRange": "$$",
     "sameAs": [
       "https://x.com/btreasuryau",
       "https://www.youtube.com/channel/UCfl6Ad-fNMLXRAN7rAGuTlQ",
@@ -134,6 +151,16 @@ export default function RootLayout({
 
   return (
     <html lang='en-AU' className={`${neuton.variable} ${sourceSans3.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://www.youtube.com" />
+        <link rel="preconnect" href="https://img.youtube.com" />
+        <link rel="preconnect" href="https://calendly.com" />
+        <link rel="preconnect" href="https://x.com" />
+        <link rel="dns-prefetch" href="https://www.youtube.com" />
+        <link rel="dns-prefetch" href="https://img.youtube.com" />
+        <link rel="dns-prefetch" href="https://calendly.com" />
+        <link rel="dns-prefetch" href="https://x.com" />
+      </head>
       <body className='min-h-screen flex flex-col antialiased bg-background text-foreground'>
         <script
           type="application/ld+json"

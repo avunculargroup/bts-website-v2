@@ -73,6 +73,7 @@ export default function Events() {
                   allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                   referrerPolicy='strict-origin-when-cross-origin'
                   allowFullScreen
+                  loading='lazy'
                   className='w-full h-full rounded-lg shadow-lg'
                 />
               </div>
