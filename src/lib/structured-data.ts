@@ -46,13 +46,12 @@ export function generateVideoSchema(data: VideoObjectData) {
   const contentUrl = `https://www.youtube.com/watch?v=${data.videoId}`;
   const embedUrl = `https://www.youtube.com/embed/${data.videoId}`;
 
-  return {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "VideoObject",
     "name": data.name,
     "description": data.description,
     "thumbnailUrl": thumbnailUrl,
-    "uploadDate": data.uploadDate || new Date().toISOString().split('T')[0],
     "duration": data.duration || "PT5M", // Default 5 minutes if not provided
     "contentUrl": contentUrl,
     "embedUrl": embedUrl,
@@ -65,4 +64,12 @@ export function generateVideoSchema(data: VideoObjectData) {
       }
     }
   };
+
+  // Only include uploadDate if explicitly provided to avoid hydration mismatches
+  // Using new Date() as default would generate different values on server vs client
+  if (data.uploadDate) {
+    schema.uploadDate = data.uploadDate;
+  }
+
+  return schema;
 }
