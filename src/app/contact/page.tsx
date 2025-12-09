@@ -3,19 +3,42 @@ import Link from 'next/link';
 import { ExternalLink } from 'lucide-react';
 import { Container } from '@/components/Container';
 import { ContactForm } from '@/components/ContactForm';
+import { generateBreadcrumbSchema } from '@/lib/structured-data';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Get in touch with Bitcoin Treasury Solutions. Ready to start your Bitcoin education journey? Contact us for workshops, training, and consultations.',
+  description: 'Contact Bitcoin Treasury Solutions in Melbourne, Victoria for Bitcoin education workshops, corporate training, and consultations. Book a workshop or schedule a call. Interstate services available on request.',
   openGraph: {
     title: 'Contact Us | Bitcoin Treasury Solutions',
-    description: 'Get in touch with Bitcoin Treasury Solutions for Bitcoin education workshops, training, and consultations. Melbourne based, interstate available.',
+    description: 'Contact Bitcoin Treasury Solutions in Melbourne, Victoria for Bitcoin education workshops, training, and consultations. Book a workshop or schedule a call.',
+    images: [
+      {
+        url: '/images/og-contact.png',
+        width: 1200,
+        height: 630,
+        alt: 'Contact Bitcoin Treasury Solutions',
+      },
+    ],
+  },
+  alternates: {
+    canonical: '/contact',
   },
 };
 
 export default function Contact() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Contact Us', url: '/contact' },
+  ]);
+
   return (
     <div className='min-h-screen bg-background'>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       <Container className='py-16 lg:py-24'>
         <div className='max-w-4xl mx-auto'>
           {/* Page Header */}

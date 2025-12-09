@@ -89,7 +89,7 @@ export function Resources() {
               <div className='w-full h-48 relative mb-0'>
                 <Image
                   src={publication.image}
-                  alt={publication.title}
+                  alt={`${publication.title} - ${publication.type} cover image from Bitcoin Treasury Solutions`}
                   fill
                   className='object-cover'
                 />
@@ -194,6 +194,7 @@ export function Resources() {
                 frameBorder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                 allowFullScreen
+                loading='lazy'
                 className='w-full h-full rounded-lg'
               ></iframe>
             </div>
@@ -219,6 +220,13 @@ export function Resources() {
               </svg>
             </Link>
           </div>
+        </div>
+
+        {/* CTA to Calculator */}
+        <div className='mt-16 text-center'>
+          <p className='text-primary-700 font-body mb-6'>
+            Want to calculate Bitcoin&apos;s historic performance? Try our <Link href='/calculator' className='text-accent-600 hover:text-accent-700 font-semibold underline'>Bitcoin CAGR Calculator</Link> with Australian tax scenarios.
+          </p>
         </div>
       </div>
     </section>

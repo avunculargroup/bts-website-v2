@@ -8,6 +8,7 @@ import { SelectedValuesSummary } from '@/components/values/SelectedValuesSummary
 import { GuideDisplay } from '@/components/values/GuideDisplay';
 import { EmailForm } from '@/components/values/EmailForm';
 import { Heart } from 'lucide-react';
+import { generateBreadcrumbSchema } from '@/lib/structured-data';
 
 export default function ValuesPage() {
   const [selectedValueIds, setSelectedValueIds] = useState<Set<string>>(new Set());
@@ -68,8 +69,19 @@ export default function ValuesPage() {
     return grouped;
   }, []);
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Bitcoin Through Values', url: '/values' },
+  ]);
+
   return (
     <div className='w-full bg-white'>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       {/* Hero Section */}
       <section className='py-16 lg:py-24 bg-primary-50'>
         <Container>

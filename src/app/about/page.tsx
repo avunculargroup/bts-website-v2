@@ -4,19 +4,42 @@ import { Container } from '@/components/Container';
 import { OurStory } from '@/components/OurStory';
 import { MissionValues } from '@/components/MissionValues';
 import { OurTeam } from '@/components/OurTeam';
+import { generateBreadcrumbSchema } from '@/lib/structured-data';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about Bitcoin Treasury Solutions and our mission to provide structured Bitcoin learning for Australia\'s professionals. Meet our team and discover our story.',
+  description: 'Bitcoin Treasury Solutions provides structured Bitcoin education for Australian professionals. Melbourne-based corporate training, workshops, and consulting services for SMEs and treasury teams. Learn about our mission, team, and Bitcoin education approach.',
   openGraph: {
     title: 'About Us | Bitcoin Treasury Solutions',
-    description: 'Learn about Bitcoin Treasury Solutions and our mission to provide structured Bitcoin learning for Australia\'s professionals.',
+    description: 'Melbourne-based Bitcoin Treasury Solutions provides structured Bitcoin education for Australian professionals. Corporate training, workshops, and consulting for SMEs and treasury teams.',
+    images: [
+      {
+        url: '/images/og-about.png',
+        width: 1200,
+        height: 630,
+        alt: 'About Bitcoin Treasury Solutions',
+      },
+    ],
+  },
+  alternates: {
+    canonical: '/about',
   },
 };
 
 export default function About() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'About Us', url: '/about' },
+  ]);
+
   return (
     <div className='min-h-screen bg-background'>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       <Container className='py-16 lg:py-24'>
         <div className='max-w-4xl mx-auto'>
           {/* Page Header */}

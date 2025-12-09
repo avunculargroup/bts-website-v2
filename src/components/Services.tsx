@@ -1,4 +1,5 @@
 import { GraduationCap, Users, Calendar } from 'lucide-react';
+import Link from 'next/link';
 
 export function Services() {
   const services = [
@@ -81,6 +82,13 @@ export function Services() {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className='mt-16 text-center'>
+          <p className='text-primary-700 font-body mb-6'>
+            Ready to get started? <Link href='/contact' className='text-accent-600 hover:text-accent-700 font-semibold underline'>Contact us</Link> to learn more about our Bitcoin education services, or <Link href='/about' className='text-accent-600 hover:text-accent-700 font-semibold underline'>learn more about our team</Link>.
+          </p>
         </div>
       </div>
     </section>
