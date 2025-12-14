@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Neuton, Source_Sans_3 } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
@@ -182,6 +183,7 @@ export default function RootLayout({
         <main id="main-content" className='flex-1' aria-label="Main content">{children}</main>
         <Footer />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
