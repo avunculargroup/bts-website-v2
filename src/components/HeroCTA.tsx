@@ -118,10 +118,7 @@ export function HeroCTA() {
 
           <div className='bg-accent-50 p-8 rounded-lg border-l-4 border-accent-500 text-center'>
             <p className=' text-primary-800 font-body leading-relaxed mb-4'>
-              Book in a 1-hour tailored, in-house introductory hour for your CFO and financial department here
-            </p>
-            <p className='text-2xl font-semibold text-accent-600 font-display mb-6'>
-              only $195pp
+              Book in a 1-hour tailored, in-house introductory hour for your CFO and financial department.
             </p>
             <div className='flex flex-col sm:flex-row gap-3 justify-center items-center'>
               <button className='bg-accent-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base'
@@ -195,10 +192,7 @@ export function HeroCTA() {
 
           <div className='bg-accent-50 p-8 rounded-lg border-l-4 border-accent-500 text-center'>
             <p className=' text-primary-800 font-body leading-relaxed mb-4'>
-              Schedule a 1-hour customised, in-house introductory workshop for your firm&apos;s staff here
-            </p>
-            <p className='text-2xl font-semibold text-accent-600 font-display mb-6'>
-              Only $195pp
+              Schedule a 1-hour customised, in-house introductory workshop for your firm&apos;s staff.
             </p>
             <div className='flex flex-col sm:flex-row gap-3 justify-center items-center'>
               <button className='bg-accent-500 text-white py-3 px-8 rounded-lg font-semibold hover:bg-accent-600 transition-colors duration-300 cursor-pointer font-display text-base'
@@ -323,9 +317,6 @@ export function HeroCTA() {
           <div className='bg-accent-50 p-8 rounded-lg border-l-4 border-accent-500 text-center'>
             <p className=' text-primary-800 font-body leading-relaxed mb-4'>
               Join our 1-day public workshop for you and your loved ones
-            </p>
-            <p className='text-2xl font-semibold text-accent-600 font-display mb-6'>
-              Only $495pp here
             </p>
             <Link
               href='/events'
