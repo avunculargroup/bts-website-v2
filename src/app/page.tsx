@@ -39,12 +39,9 @@ export default function Home() {
           {/* Slogan - Below on mobile, right on desktop */}
           <div className='w-full lg:w-1/2 flex items-center justify-center sm:px-20 px-16 lg:px-12 lg:pl-8 shrink-0'>
             <div className='text-center lg:text-right'>
-              <h1 className='text-4xl sm:text-6xl md:text-7xl lg:text-6xl font-bold text-primary-900 font-display leading-tight'>
-                Structured Bitcoin Learning
+              <h1 className='text-4xl sm:text-6xl md:text-7xl lg:text-6xl font-bold text-primary-900 font-display leading-tight mb-6'>
+                Understand bitcoin this year
               </h1>
-              <h2 className='text-3xl sm:text-4xl md:text-5xl lg:text-4xl font-medium text-primary-700 font-display mt-2 mb-6'>
-                for Australia&apos;s Professionals.
-              </h2>
               <div className='flex flex-col sm:flex-row gap-4 justify-center lg:justify-end'>
                 <button
                   onClick={(e) => {
