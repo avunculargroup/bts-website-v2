@@ -219,3 +219,12 @@ html {
 .animate-scroll-bounce {
   animation: scroll-bounce 2s ease-in-out infinite;
 }
+
+/* Hover utilities using CSS vars — safe for Server Components */
+.link-hover-gold {
+  color: var(--color-text-secondary);
+  transition: color 150ms ease;
+}
+.link-hover-gold:hover {
+  color: var(--color-gold-dark);
+}

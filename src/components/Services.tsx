@@ -1,3 +1,5 @@
+'use client';
+
 import { GraduationCap, Users, Calendar } from 'lucide-react';
 import Link from 'next/link';
 
