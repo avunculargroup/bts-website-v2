@@ -1,19 +1,25 @@
 import type { Metadata, Viewport } from 'next';
-import { Neuton, Source_Sans_3 } from 'next/font/google';
+import { Playfair_Display, DM_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
-const neuton = Neuton({
+const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-neuton',
-  weight: '400',
+  variable: '--font-playfair',
+  weight: ['400', '600', '700'],
 });
 
-const sourceSans3 = Source_Sans_3({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-source-sans',
-  weight: ['400', '600', '700'],
+  variable: '--font-dm-sans',
+  weight: ['400', '500', '600', '700'],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+  weight: ['400', '500'],
 });
 
 export const metadata: Metadata = {
@@ -153,7 +159,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang='en-AU' className={`${neuton.variable} ${sourceSans3.variable}`}>
+    <html lang='en-AU' className={`${playfairDisplay.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://img.youtube.com" />

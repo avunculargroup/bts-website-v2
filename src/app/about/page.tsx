@@ -33,7 +33,7 @@ export default function About() {
   ]);
 
   return (
-    <div className='min-h-screen bg-background'>
+    <div className='min-h-screen' style={{ backgroundColor: 'var(--color-bg)' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -43,12 +43,18 @@ export default function About() {
       <Container className='py-16 lg:py-24'>
         <div className='max-w-4xl mx-auto'>
           {/* Page Header */}
-          <div className='text-center mb-16'>
-            <Users className='mx-auto h-16 w-16 text-accent-500 mb-4' />
-            <h1 className='text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-900 font-display mb-6'>
+          <div className='text-center mb-14'>
+            <Users className='mx-auto h-12 w-12 mb-4' strokeWidth={1.5} style={{ color: 'var(--color-gold)' }} />
+            <h1
+              className='text-4xl sm:text-5xl font-bold mb-4'
+              style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}
+            >
               About Us
             </h1>
-            <p className='text-xl text-primary-700 font-body leading-relaxed'>
+            <p
+              className='text-base leading-relaxed'
+              style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
+            >
               Bitcoin education with clarity and care
             </p>
           </div>

@@ -10,7 +10,7 @@ export function MissionValues() {
     },
     {
       title: "Empowerment over hype",
-      description: "We do not sell fast fortunes or push products—we teach you to make informed decisions."
+      description: "We do not sell fast fortunes or push products — we teach you to make informed decisions."
     },
     {
       title: "Holistic perspective",
@@ -25,25 +25,47 @@ export function MissionValues() {
   return (
     <section className='space-y-8'>
       <div className='text-center'>
-        <h2 className='text-3xl sm:text-4xl font-bold text-primary-900 font-display mb-6'>
+        <h2
+          className='text-2xl sm:text-3xl font-bold'
+          style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}
+        >
           Mission & Values
         </h2>
       </div>
-      
-      <div className='space-y-8'>
+
+      <div className='space-y-6'>
         <div className='text-center'>
-          <p className='text-xl text-primary-900 font-body leading-relaxed max-w-3xl mx-auto'>
+          <p
+            className='text-base leading-relaxed max-w-2xl mx-auto'
+            style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
+          >
             Our mission is to make Bitcoin education accessible, practical and grounded in reality. We believe that:
           </p>
         </div>
-        
-        <div className='grid gap-6 md:grid-cols-2 md:gap-8'>
+
+        <div className='grid gap-4 md:grid-cols-2'>
           {values.map((value, index) => (
-            <div key={index} className='bg-accent-50 p-6 rounded-lg border-l-4 border-accent-500'>
-              <h3 className='text-xl font-semibold text-primary-900 font-display mb-3'>
+            <div
+              key={index}
+              className='p-6 rounded-xl'
+              style={{
+                backgroundColor: 'var(--color-gold-light)',
+                borderLeft: '4px solid var(--color-gold)',
+                border: '1px solid var(--color-border)',
+                borderLeftWidth: '4px',
+                borderLeftColor: 'var(--color-gold)',
+              }}
+            >
+              <h3
+                className='text-base font-semibold mb-2'
+                style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-primary)' }}
+              >
                 {value.title}
               </h3>
-              <p className='text-primary-800 font-body leading-relaxed'>
+              <p
+                className='text-sm leading-relaxed'
+                style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
+              >
                 {value.description}
               </p>
             </div>

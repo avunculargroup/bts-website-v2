@@ -30,7 +30,7 @@ function NewsletterSubscribe() {
 
       if (response.ok) {
         setIsSuccess(true);
-        setMessage('Successfully subscribed!');
+        setMessage('Successfully subscribed.');
         setEmail('');
         setTimeout(() => {
           setIsSuccess(false);
@@ -47,14 +47,23 @@ function NewsletterSubscribe() {
   };
 
   return (
-    <div className='bg-primary-950 border-b border-primary-200 py-6'>
+    <div
+      className='border-b py-8'
+      style={{
+        backgroundColor: 'var(--color-surface-subtle)',
+        borderColor: 'var(--color-border)',
+      }}
+    >
       <Container>
-        <div className='flex flex-col lg:flex-row items-center justify-between gap-4'>
-          <div className='flex-1 text-center lg:text-left w-full lg:w-auto'>
-            <h3 className='text-xl font-bold text-secondary-50 font-display mb-1'>
+        <div className='flex flex-col lg:flex-row items-center justify-between gap-6'>
+          <div className='flex-1 text-center lg:text-left'>
+            <h3
+              className='text-xl font-semibold mb-1'
+              style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}
+            >
               Stay Updated
             </h3>
-            <p className='text-lg md:text-base text-secondary-100'>
+            <p className='text-sm' style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}>
               Get the latest Bitcoin news affecting Australians and stay informed about new events.
             </p>
           </div>
@@ -67,18 +76,45 @@ function NewsletterSubscribe() {
                 placeholder='Enter your email'
                 required
                 disabled={isSubmitting || isSuccess}
-                className='flex-1 px-4 py-2.5 bg-white border border-primary-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent font-body text-lg md:text-base text-primary-900 placeholder:text-primary-400 disabled:bg-gray-100 disabled:cursor-not-allowed'
+                className='flex-1 px-4 py-2.5 text-sm rounded-md disabled:opacity-60 disabled:cursor-not-allowed'
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  border: '1px solid var(--color-border)',
+                  backgroundColor: 'var(--color-surface)',
+                  color: 'var(--color-text-primary)',
+                  borderRadius: 'var(--radius-md)',
+                  outline: 'none',
+                }}
+                onFocus={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--color-gold)';
+                  e.currentTarget.style.boxShadow = '0 0 0 3px rgba(201,168,76,0.15)';
+                }}
+                onBlur={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--color-border)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
               />
               <button
                 type='submit'
                 disabled={isSubmitting || isSuccess}
-                className='px-6 py-2.5 bg-accent-500 text-white font-semibold rounded-lg hover:bg-accent-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer font-display text-base md:text-sm whitespace-nowrap'
+                className='px-5 py-2.5 text-sm font-medium rounded-lg whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-100 active:scale-[0.98]'
+                style={{
+                  fontFamily: 'var(--font-body)',
+                  backgroundColor: 'var(--color-gold)',
+                  color: 'var(--color-text-primary)',
+                  borderRadius: 'var(--radius-lg)',
+                }}
+                onMouseOver={(e) => { if (!isSubmitting && !isSuccess) e.currentTarget.style.backgroundColor = 'var(--color-gold-dark)'; }}
+                onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'var(--color-gold)'; }}
               >
-                {isSubmitting ? 'Subscribing...' : isSuccess ? 'Subscribed!' : 'Subscribe'}
+                {isSubmitting ? 'Subscribing...' : isSuccess ? 'Subscribed' : 'Subscribe'}
               </button>
             </form>
             {message && (
-              <p className={`mt-2 text-base text-center sm:text-left ${message.includes('Success') ? 'text-green-600' : 'text-red-600'}`}>
+              <p
+                className='mt-2 text-sm text-center sm:text-left'
+                style={{ color: message.includes('Success') ? 'var(--color-success)' : 'var(--color-destructive)' }}
+              >
                 {message}
               </p>
             )}
@@ -91,23 +127,31 @@ function NewsletterSubscribe() {
 
 export function Footer() {
   return (
-    <footer className='bg-background' role='contentinfo'>
+    <footer
+      role='contentinfo'
+      style={{ backgroundColor: 'var(--color-bg)', borderTop: '1px solid var(--color-border)' }}
+    >
       <NewsletterSubscribe />
       <Container className='py-12'>
         <div className='grid grid-cols-1 gap-8 md:grid-cols-4'>
           {/* Company Info */}
           <div className='space-y-4'>
-            <div className='flex items-center space-x-2'>
+            <div className='flex items-center space-x-2.5'>
               <Image
                 src='/images/logo.svg'
                 alt='BTS Logo'
-                width={50}
-                height={50}
+                width={40}
+                height={40}
               />
-              <span className='text-xl font-semibold text-foreground font-display'>Bitcoin Treasury Solutions</span>
+              <span
+                className='text-base font-semibold'
+                style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}
+              >
+                Bitcoin Treasury Solutions
+              </span>
             </div>
-            <p className='text-base md:text-sm text-muted-foreground mb-4'>
-              Structured Bitcoin Learning for Australia&apos;s Professionals.
+            <p className='text-sm' style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}>
+              Structured Bitcoin learning for Australia&apos;s professionals.
             </p>
             {/* Social Media Links */}
             <div className='flex items-center gap-4'>
@@ -115,10 +159,13 @@ export function Footer() {
                 href='https://x.com/btreasuryau'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-muted-foreground hover:text-accent-500 transition-colors'
+                className='transition-colors'
+                style={{ color: 'var(--color-text-tertiary)' }}
+                onMouseOver={(e) => { e.currentTarget.style.color = 'var(--color-gold)'; }}
+                onMouseOut={(e) => { e.currentTarget.style.color = 'var(--color-text-tertiary)'; }}
                 aria-label='Follow us on X (Twitter)'
               >
-                <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 24 24' aria-hidden='true'>
+                <svg className='w-4 h-4' fill='currentColor' viewBox='0 0 24 24' aria-hidden='true'>
                   <path d='M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z'/>
                 </svg>
               </Link>
@@ -126,10 +173,13 @@ export function Footer() {
                 href='https://www.youtube.com/channel/UCfl6Ad-fNMLXRAN7rAGuTlQ'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-muted-foreground hover:text-accent-500 transition-colors'
+                className='transition-colors'
+                style={{ color: 'var(--color-text-tertiary)' }}
+                onMouseOver={(e) => { e.currentTarget.style.color = 'var(--color-gold)'; }}
+                onMouseOut={(e) => { e.currentTarget.style.color = 'var(--color-text-tertiary)'; }}
                 aria-label='Subscribe to our YouTube channel'
               >
-                <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 24 24' aria-hidden='true'>
+                <svg className='w-4 h-4' fill='currentColor' viewBox='0 0 24 24' aria-hidden='true'>
                   <path d='M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z'/>
                 </svg>
               </Link>
@@ -137,10 +187,13 @@ export function Footer() {
                 href='https://www.linkedin.com/company/btreasury/'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='text-muted-foreground hover:text-accent-500 transition-colors'
+                className='transition-colors'
+                style={{ color: 'var(--color-text-tertiary)' }}
+                onMouseOver={(e) => { e.currentTarget.style.color = 'var(--color-gold)'; }}
+                onMouseOut={(e) => { e.currentTarget.style.color = 'var(--color-text-tertiary)'; }}
                 aria-label='Connect with us on LinkedIn'
               >
-                <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 24 24' aria-hidden='true'>
+                <svg className='w-4 h-4' fill='currentColor' viewBox='0 0 24 24' aria-hidden='true'>
                   <path d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z'/>
                 </svg>
               </Link>
@@ -149,73 +202,73 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className='space-y-4'>
-            <h3 className='text-sm font-semibold text-foreground'>Quick Links</h3>
+            <h3 className='text-xs font-semibold uppercase tracking-wider' style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-tertiary)' }}>
+              Quick Links
+            </h3>
             <nav className='flex flex-col space-y-2'>
-              <Link
-                href='/#services'
-                className='text-base md:text-sm text-muted-foreground transition-colors hover:text-foreground'
-              >
-                Services
-              </Link>
-              <Link
-                href='/about'
-                className='text-base md:text-sm text-muted-foreground transition-colors hover:text-foreground'
-              >
-                About Us
-              </Link>
-              <Link
-                href='/contact'
-                className='text-base md:text-sm text-muted-foreground transition-colors hover:text-foreground'
-              >
-                Contact
-              </Link>
+              {[
+                { href: '/#services', label: 'Services' },
+                { href: '/about', label: 'About Us' },
+                { href: '/contact', label: 'Contact' },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className='text-sm transition-colors'
+                  style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
+                  onMouseOver={(e) => { e.currentTarget.style.color = 'var(--color-text-primary)'; }}
+                  onMouseOut={(e) => { e.currentTarget.style.color = 'var(--color-text-secondary)'; }}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
           </div>
 
           {/* Resources */}
           <div className='space-y-4'>
-            <h3 className='text-sm font-semibold text-foreground'>Resources</h3>
+            <h3 className='text-xs font-semibold uppercase tracking-wider' style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-tertiary)' }}>
+              Resources
+            </h3>
             <nav className='flex flex-col space-y-2'>
-              <Link
-                href='/resources'
-                className='text-base md:text-sm text-muted-foreground transition-colors hover:text-foreground'
-              >
-                Resources
-              </Link>
-              <Link
-                href='/events'
-                className='text-base md:text-sm text-muted-foreground transition-colors hover:text-foreground'
-              >
-                Events
-              </Link>
-              <Link
-                href='/values'
-                className='text-base md:text-sm text-muted-foreground transition-colors hover:text-foreground'
-              >
-                Bitcoin Through Values
-              </Link>
-              <Link
-                href='/resources#faqs'
-                className='text-base md:text-sm text-muted-foreground transition-colors hover:text-foreground'
-              >
-                Bitcoin FAQs
-              </Link>
+              {[
+                { href: '/resources', label: 'Resources' },
+                { href: '/events', label: 'Events' },
+                { href: '/values', label: 'Bitcoin Through Values' },
+                { href: '/resources#faqs', label: 'Bitcoin FAQs' },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className='text-sm transition-colors'
+                  style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
+                  onMouseOver={(e) => { e.currentTarget.style.color = 'var(--color-text-primary)'; }}
+                  onMouseOut={(e) => { e.currentTarget.style.color = 'var(--color-text-secondary)'; }}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </nav>
           </div>
 
           {/* Contact Info */}
           <div className='space-y-4'>
-            <h3 className='text-sm font-semibold text-foreground'>Contact</h3>
-            <div className='space-y-2 text-base md:text-sm text-muted-foreground'>
+            <h3 className='text-xs font-semibold uppercase tracking-wider' style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-tertiary)' }}>
+              Contact
+            </h3>
+            <div className='space-y-2 text-sm' style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}>
               <p>enquiry@btreasury.com.au</p>
               <Link
                 href='https://calendly.com/carri27/30min'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='inline-flex items-center gap-1 transition-colors hover:text-foreground'
+                className='inline-flex items-center gap-1 transition-colors'
+                style={{ color: 'var(--color-gold-dark)' }}
+                onMouseOver={(e) => { e.currentTarget.style.color = 'var(--color-gold)'; }}
+                onMouseOut={(e) => { e.currentTarget.style.color = 'var(--color-gold-dark)'; }}
               >
                 Schedule a call
-                <ExternalLink className='w-3 h-3' />
+                <ExternalLink className='w-3 h-3' strokeWidth={1.5} />
               </Link>
               <p>585 Little Collins Street, Suite 513<br />Melbourne, Victoria 3000</p>
             </div>
@@ -223,24 +276,27 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className='mt-8 border-t border-primary-200 pt-8'>
+        <div className='mt-10 pt-8' style={{ borderTop: '1px solid var(--color-border)' }}>
           <div className='flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0'>
-            <p className='text-base md:text-sm text-muted-foreground'>
+            <p className='text-sm' style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-tertiary)' }}>
               © {new Date().getFullYear()} Bitcoin Treasury Solutions. All rights reserved.
             </p>
             <div className='flex space-x-6'>
-              <Link
-                href='/privacy'
-                className='text-base md:text-sm text-muted-foreground transition-colors hover:text-foreground'
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href='/terms'
-                className='text-base md:text-sm text-muted-foreground transition-colors hover:text-foreground'
-              >
-                Terms of Service
-              </Link>
+              {[
+                { href: '/privacy', label: 'Privacy Policy' },
+                { href: '/terms', label: 'Terms of Service' },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className='text-sm transition-colors'
+                  style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-tertiary)' }}
+                  onMouseOver={(e) => { e.currentTarget.style.color = 'var(--color-text-secondary)'; }}
+                  onMouseOut={(e) => { e.currentTarget.style.color = 'var(--color-text-tertiary)'; }}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

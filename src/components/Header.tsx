@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import Image from 'next/image';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -43,16 +43,24 @@ export function Header() {
   }, []);
 
   return (
-    <header className={cn(
-      'sticky top-0 z-50 w-full bg-primary-950 backdrop-blur supports-[backdrop-filter]:bg-primary-950 transition-shadow duration-300',
-      isScrolled && 'shadow-lg shadow-black/10'
-    )}>
-      <Container className='flex h-12 items-center justify-between'>
+    <header
+      className={cn(
+        'sticky top-0 z-50 w-full transition-shadow duration-300',
+        'bg-[#FAFAF8] border-b border-[#E8E6E0]',
+        isScrolled && 'shadow-[0_1px_3px_rgba(26,25,21,0.06),0_1px_2px_rgba(26,25,21,0.04)]'
+      )}
+    >
+      <Container className='flex h-14 items-center justify-between'>
         {/* Logo */}
-        <Link href='/' className='flex items-center space-x-2'>
-          <div className='h-8 w-8 rounded-lg bg-primary'></div>
-          <span className='text-xl font-bold text-secondary-50 font-display'>
-            BTS<span className='text-accent-500 text-2xl'>.</span>
+        <Link href='/' className='flex items-center space-x-2.5'>
+          <Image
+            src='/images/logo.svg'
+            alt='Bitcoin Treasury Solutions'
+            width={32}
+            height={32}
+          />
+          <span style={{ fontFamily: 'var(--font-display)' }} className='text-lg font-semibold text-[#1A1915]'>
+            Bitcoin Treasury Solutions
           </span>
         </Link>
 
@@ -65,9 +73,14 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={cn(
-                      'group relative inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-secondary-50 hover:text-secondary-50 focus:text-secondary-50 disabled:pointer-events-none disabled:opacity-50 data-[state=open]:text-secondary-50 focus-visible:ring-white/50 outline-none transition-all duration-300 focus-visible:ring-[3px] focus-visible:outline-1 cursor-pointer rounded-md font-display',
-                      'after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent-500 after:transition-all after:duration-300 hover:after:w-full'
+                      'relative inline-flex items-center justify-center px-3 py-2 text-sm font-medium',
+                      'text-[#6B6860] hover:text-[#1A1915] rounded-md transition-colors duration-150',
+                      'after:absolute after:bottom-0 after:left-3 after:right-3 after:h-0.5',
+                      'after:bg-[#C9A84C] after:scale-x-0 hover:after:scale-x-100',
+                      'after:transition-transform after:duration-200 after:origin-left',
+                      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] focus-visible:ring-offset-2'
                     )}
+                    style={{ fontFamily: 'var(--font-body)' }}
                   >
                     {item.label}
                   </Link>
@@ -78,49 +91,68 @@ export function Header() {
         </NavigationMenu>
 
         {/* CTA Button */}
-        <div className='hidden md:flex items-center space-x-4'>
-          <Button asChild className="text-secondary-50 border border-secondary-50 bg-transparent hover:bg-secondary-50 hover:text-primary-950 transition-colors font-display">
-            <Link href='/contact'>Contact us</Link>
-          </Button>
+        <div className='hidden md:flex items-center'>
+          <Link
+            href='/contact'
+            className='inline-flex items-center justify-center px-5 py-2 rounded-lg text-sm font-medium transition-colors duration-100 active:scale-[0.98]'
+            style={{
+              fontFamily: 'var(--font-body)',
+              backgroundColor: 'var(--color-gold)',
+              color: 'var(--color-text-primary)',
+            }}
+            onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--color-gold-dark)'; }}
+            onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'var(--color-gold)'; }}
+          >
+            Contact us
+          </Link>
         </div>
 
         {/* Mobile Menu */}
         <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
           <SheetTrigger asChild>
-            <Button
-              variant='ghost'
-              size='icon'
-              className='md:hidden text-secondary-50 hover:bg-white/10 hover:text-secondary-50'
+            <button
+              className='md:hidden p-2 rounded-md text-[#6B6860] hover:text-[#1A1915] hover:bg-[#F4F4F1] transition-colors'
               aria-label='Open navigation menu'
             >
-              <Menu className='h-5 w-5' />
-            </Button>
+              <Menu className='h-5 w-5' strokeWidth={1.5} />
+            </button>
           </SheetTrigger>
-          <SheetContent side='right' className='w-[300px] sm:w-[400px] bg-primary-950 border-l border-primary-800'>
+          <SheetContent side='right' className='w-[300px] sm:w-[380px] bg-[#FAFAF8] border-l border-[#E8E6E0]'>
             <SheetHeader>
               <SheetTitle className='text-left'>
-                <span className='text-xl font-bold text-secondary-50 font-display'>
-                  BTS<span className='text-accent-500 text-2xl'>.</span>
-                </span>
+                <Link href='/' onClick={() => setIsMobileMenuOpen(false)} className='flex items-center space-x-2'>
+                  <Image src='/images/logo.svg' alt='BTS Logo' width={28} height={28} />
+                  <span style={{ fontFamily: 'var(--font-display)' }} className='text-base font-semibold text-[#1A1915]'>
+                    Bitcoin Treasury Solutions
+                  </span>
+                </Link>
               </SheetTitle>
             </SheetHeader>
-            <nav className='flex flex-col space-y-4 mt-6 px-4'>
+            <nav className='flex flex-col space-y-1 mt-6 px-2'>
               {navigationItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className='text-sm font-medium text-secondary-50 transition-colors hover:text-accent-500 focus:text-accent-500 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 focus:ring-offset-primary-950 rounded-md px-3 py-2 font-display'
+                  className='text-sm font-medium text-[#6B6860] hover:text-[#1A1915] hover:bg-[#F4F4F1] rounded-md px-3 py-2.5 transition-colors'
+                  style={{ fontFamily: 'var(--font-body)' }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
-              <div className='pt-4 mt-4 border-t border-primary-800 px-2'>
-                <Button asChild className='w-full mt-2 text-secondary-50 border border-secondary-50 bg-transparent hover:bg-secondary-50 hover:text-primary-950 transition-colors font-display'>
-                  <Link href='/contact' onClick={() => setIsMobileMenuOpen(false)}>
-                    Contact us
-                  </Link>
-                </Button>
+              <div className='pt-4 mt-2 border-t border-[#E8E6E0] px-1'>
+                <Link
+                  href='/contact'
+                  className='flex items-center justify-center w-full px-5 py-2.5 rounded-lg text-sm font-medium transition-colors duration-100'
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    backgroundColor: 'var(--color-gold)',
+                    color: 'var(--color-text-primary)',
+                  }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact us
+                </Link>
               </div>
             </nav>
           </SheetContent>
