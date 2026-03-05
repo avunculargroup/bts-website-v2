@@ -1,3 +1,5 @@
+'use client';
+
 import { GraduationCap, Users, Calendar } from 'lucide-react';
 import Link from 'next/link';
 
@@ -9,7 +11,7 @@ export function Services() {
       icon: GraduationCap,
       features: [
         "Understanding fundamentals of Bitcoin, the network and the asset",
-        "Accepting and Storing bitcoin safely",
+        "Accepting and storing bitcoin safely",
         "Advanced self-custody strategies"
       ]
     },
@@ -19,7 +21,7 @@ export function Services() {
       icon: Users,
       features: [
         "Personalised Bitcoin integration strategies",
-        "Fitting bitcoin into corporate goverance",
+        "Fitting bitcoin into corporate governance",
         "Ongoing support as the landscape evolves",
         "Tailored risk assessment and management"
       ]
@@ -37,44 +39,83 @@ export function Services() {
   ];
 
   return (
-    <section id='services' className='py-16 lg:py-24 bg-background'>
-      <div className='max-w-6xl mx-auto px-8'>
+    <section id='services' className='py-16 lg:py-24' style={{ backgroundColor: 'var(--color-bg)' }}>
+      <div className='max-w-5xl mx-auto px-6 lg:px-8'>
         {/* Section Header */}
-        <div className='text-center mb-16'>
-          <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-900 font-display mb-6'>
+        <div className='text-center mb-14'>
+          <h2
+            className='text-3xl sm:text-4xl font-bold mb-4'
+            style={{ fontFamily: 'var(--font-display)', color: 'var(--color-text-primary)' }}
+          >
             Our Services
           </h2>
-          <p className='text-xl text-primary-700 font-body leading-relaxed max-w-3xl mx-auto'>
+          <p
+            className='text-base leading-relaxed max-w-2xl mx-auto'
+            style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
+          >
             We offer a range of educational services to help you navigate Bitcoin with confidence and clarity.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
+        <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
           {services.map((service, index) => (
-            <div key={index} className='bg-white p-8 rounded-lg shadow-sm border border-primary-200 hover:shadow-md transition-shadow duration-300'>
+            <div
+              key={index}
+              className='p-6 rounded-xl transition-all duration-200 group'
+              style={{
+                backgroundColor: 'var(--color-surface)',
+                border: '1px solid var(--color-border)',
+                boxShadow: 'var(--shadow-sm)',
+              }}
+              onMouseOver={(e) => {
+                const el = e.currentTarget;
+                el.style.boxShadow = 'var(--shadow-md)';
+                el.style.transform = 'translateY(-2px)';
+              }}
+              onMouseOut={(e) => {
+                const el = e.currentTarget;
+                el.style.boxShadow = 'var(--shadow-sm)';
+                el.style.transform = 'translateY(0)';
+              }}
+            >
               {/* Icon */}
-              <div className='mb-6'>
-                <div className='w-16 h-16 bg-accent-100 rounded-lg flex items-center justify-center'>
-                  <service.icon className='w-8 h-8 text-accent-600' />
+              <div className='mb-5'>
+                <div
+                  className='w-12 h-12 rounded-lg flex items-center justify-center'
+                  style={{ backgroundColor: 'var(--color-gold-light)' }}
+                >
+                  <service.icon className='w-6 h-6' strokeWidth={1.5} style={{ color: 'var(--color-gold-dark)' }} />
                 </div>
               </div>
 
               {/* Content */}
-              <h3 className='text-2xl font-bold text-primary-900 font-display mb-4'>
+              <h3
+                className='text-lg font-semibold mb-3'
+                style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-primary)' }}
+              >
                 {service.title}
               </h3>
-              
-              <p className='text-primary-800 font-body leading-relaxed mb-6'>
+
+              <p
+                className='text-sm leading-relaxed mb-5'
+                style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
+              >
                 {service.description}
               </p>
 
               {/* Features List */}
               <ul className='space-y-2'>
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className='flex items-start'>
-                    <div className='w-2 h-2 bg-accent-500 rounded-full mt-2 mr-3 flex-shrink-0'></div>
-                    <span className='text-primary-700 font-body text-sm leading-relaxed'>
+                  <li key={featureIndex} className='flex items-start gap-2.5'>
+                    <div
+                      className='w-1.5 h-1.5 rounded-full mt-1.5 shrink-0'
+                      style={{ backgroundColor: 'var(--color-gold)' }}
+                    />
+                    <span
+                      className='text-sm leading-relaxed'
+                      style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
+                    >
                       {feature}
                     </span>
                   </li>
@@ -85,9 +126,27 @@ export function Services() {
         </div>
 
         {/* CTA */}
-        <div className='mt-16 text-center'>
-          <p className='text-primary-700 font-body mb-6'>
-            Ready to get started? <Link href='/contact' className='text-accent-600 hover:text-accent-700 font-semibold underline'>Contact us</Link> to learn more about our Bitcoin education services, or <Link href='/about' className='text-accent-600 hover:text-accent-700 font-semibold underline'>learn more about our team</Link>.
+        <div className='mt-12 text-center'>
+          <p
+            className='text-sm'
+            style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
+          >
+            Ready to get started?{' '}
+            <Link
+              href='/contact'
+              className='font-medium underline underline-offset-2'
+              style={{ color: 'var(--color-gold-dark)' }}
+            >
+              Contact us
+            </Link>{' '}
+            to learn more about our Bitcoin education services, or{' '}
+            <Link
+              href='/about'
+              className='font-medium underline underline-offset-2'
+              style={{ color: 'var(--color-gold-dark)' }}
+            >
+              learn more about our team
+            </Link>.
           </p>
         </div>
       </div>

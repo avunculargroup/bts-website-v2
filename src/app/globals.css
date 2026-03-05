@@ -5,115 +5,60 @@ html {
   scroll-behavior: smooth;
 }
 
-/* CSS Custom Properties for Colors and Fonts */
+/* CSS Custom Properties — Design Tokens */
 :root {
-  /* Primary Colors - Navy */
-  --primary-50: #f0f4f8;
-  --primary-100: #d9e2ec;
-  --primary-200: #bcccdc;
-  --primary-300: #9fb3c8;
-  --primary-400: #829ab1;
-  --primary-500: #627d98;
-  --primary-600: #486581;
-  --primary-700: #334e68;
-  --primary-800: #243b53;
-  --primary-900: #102a43;
-  --primary-950: #0a1f2e;
+  /* Colours */
+  --color-bg: #FAFAF8;
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F4F4F1;
+  --color-border: #E8E6E0;
+  --color-text-primary: #1A1915;
+  --color-text-secondary: #6B6860;
+  --color-text-tertiary: #9E9C96;
+  --color-gold: #C9A84C;
+  --color-gold-light: #F0E4C0;
+  --color-gold-dark: #9A7A2E;
+  --color-success: #3D7A5E;
+  --color-warning: #B8860B;
+  --color-destructive: #B04040;
 
-  /* Secondary Colors - Gold */
-  --secondary-50: #fffbf0;
-  --secondary-100: #fef3c7;
-  --secondary-200: #fde68a;
-  --secondary-300: #fcd34d;
-  --secondary-400: #fbbf24;
-  --secondary-500: #f59e0b;
-  --secondary-600: #d97706;
-  --secondary-700: #b45309;
-  --secondary-800: #92400e;
-  --secondary-900: #78350f;
-  --secondary-950: #451a03;
-
-  /* Accent Colors - Orange */
-  --accent-50: #fff7ed;
-  --accent-100: #ffedd5;
-  --accent-200: #fed7aa;
-  --accent-300: #fdba74;
-  --accent-400: #fb923c;
-  --accent-500: #f97316;
-  --accent-600: #ea580c;
-  --accent-700: #c2410c;
-  --accent-800: #9a3412;
-  --accent-900: #7c2d12;
-  --accent-950: #431407;
-
-  /* Background and Foreground */
-  --background: #fff7ed;
-  --foreground: #102a43;
-  --card: #ffffff;
-  --card-foreground: #102a43;
-  --popover: #ffffff;
-  --popover-foreground: #102a43;
-  --muted: #f8fafc;
-  --muted-foreground: #64748b;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #334e68;
+  /* Typography */
+  --font-display: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  --font-body: var(--font-dm-sans), 'DM Sans', system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), 'JetBrains Mono', monospace;
 
   /* Radius */
-  --radius: 0.5rem;
-  --radius-sm: 0.25rem;
-  --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.75rem;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
 
-  /* Fonts */
-  --font-sans: var(--font-source-sans), 'Source Sans 3', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
-  --font-display: var(--font-source-sans), 'Source Sans 3', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-body: var(--font-neuton), 'Neuton', serif;
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(26, 25, 21, 0.06), 0 1px 2px rgba(26, 25, 21, 0.04);
+  --shadow-md: 0 4px 12px rgba(26, 25, 21, 0.08), 0 2px 4px rgba(26, 25, 21, 0.04);
+  --shadow-lg: 0 12px 32px rgba(26, 25, 21, 0.10), 0 4px 8px rgba(26, 25, 21, 0.06);
+
+  /* Aliases for Tailwind / existing component compat */
+  --background: #FAFAF8;
+  --foreground: #1A1915;
+  --card: #FFFFFF;
+  --card-foreground: #1A1915;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1915;
+  --muted: #F4F4F1;
+  --muted-foreground: #6B6860;
+  --border: #E8E6E0;
+  --input: #E8E6E0;
+  --ring: #C9A84C;
+  --destructive: #B04040;
+  --destructive-foreground: #FFFFFF;
+
+  /* Keep radius variable expected by shadcn/ui */
+  --radius: 0.5rem;
 }
 
 /* Tailwind Theme Integration */
 @theme inline {
-  /* Colors */
-  --color-primary-50: var(--primary-50);
-  --color-primary-100: var(--primary-100);
-  --color-primary-200: var(--primary-200);
-  --color-primary-300: var(--primary-300);
-  --color-primary-400: var(--primary-400);
-  --color-primary-500: var(--primary-500);
-  --color-primary-600: var(--primary-600);
-  --color-primary-700: var(--primary-700);
-  --color-primary-800: var(--primary-800);
-  --color-primary-900: var(--primary-900);
-  --color-primary-950: var(--primary-950);
-
-  --color-secondary-50: var(--secondary-50);
-  --color-secondary-100: var(--secondary-100);
-  --color-secondary-200: var(--secondary-200);
-  --color-secondary-300: var(--secondary-300);
-  --color-secondary-400: var(--secondary-400);
-  --color-secondary-500: var(--secondary-500);
-  --color-secondary-600: var(--secondary-600);
-  --color-secondary-700: var(--secondary-700);
-  --color-secondary-800: var(--secondary-800);
-  --color-secondary-900: var(--secondary-900);
-  --color-secondary-950: var(--secondary-950);
-
-  --color-accent-50: var(--accent-50);
-  --color-accent-100: var(--accent-100);
-  --color-accent-200: var(--accent-200);
-  --color-accent-300: var(--accent-300);
-  --color-accent-400: var(--accent-400);
-  --color-accent-500: var(--accent-500);
-  --color-accent-600: var(--accent-600);
-  --color-accent-700: var(--accent-700);
-  --color-accent-800: var(--accent-800);
-  --color-accent-900: var(--accent-900);
-  --color-accent-950: var(--accent-950);
-
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -128,21 +73,39 @@ html {
   --color-input: var(--input);
   --color-ring: var(--ring);
 
+  /* Gold */
+  --color-gold: #C9A84C;
+  --color-gold-light: #F0E4C0;
+  --color-gold-dark: #9A7A2E;
+
+  /* Text */
+  --color-text-primary: #1A1915;
+  --color-text-secondary: #6B6860;
+  --color-text-tertiary: #9E9C96;
+
+  /* Surfaces */
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F4F4F1;
+
+  /* Status */
+  --color-success: #3D7A5E;
+  --color-warning: #B8860B;
+
   /* Fonts */
-  --font-sans: var(--font-sans);
+  --font-sans: var(--font-body);
   --font-mono: var(--font-mono);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
-  --font-serif: var(--font-neuton);
+  --font-serif: var(--font-display);
 
   /* Radius */
-  --radius-sm: var(--radius-sm);
-  --radius-md: var(--radius-md);
-  --radius-lg: var(--radius-lg);
-  --radius-xl: var(--radius-xl);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
 }
 
-/* Base Styles Reset */
+/* Base Styles */
 @layer base {
   *,
   *::before,
@@ -155,17 +118,15 @@ html {
   html {
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
-    -moz-tab-size: 4;
-    tab-size: 4;
-    font-family: var(--font-sans);
+    font-family: var(--font-body);
   }
 
   body {
     font-family: var(--font-body);
-    font-size: 1.375rem;
+    font-size: 1rem;
     line-height: 1.6;
-    color: var(--foreground);
-    background-color: var(--background);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -175,7 +136,7 @@ html {
     font-family: var(--font-display);
     font-weight: 600;
     line-height: 1.2;
-    color: var(--foreground);
+    color: var(--color-text-primary);
   }
 
   h1 {
@@ -184,28 +145,20 @@ html {
   }
 
   h2 {
-    font-size: 1.875rem;
+    font-size: 1.75rem;
     font-weight: 600;
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
+    font-family: var(--font-body);
   }
 
   h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-
-  h5 {
-    font-size: 1.125rem;
-    font-weight: 600;
-  }
-
-  h6 {
     font-size: 1rem;
     font-weight: 600;
+    font-family: var(--font-body);
   }
 
   p {
@@ -214,13 +167,13 @@ html {
 
   /* Links */
   a {
-    color: var(--primary-600);
+    color: var(--color-gold-dark);
     text-decoration: none;
-    transition: color 0.2s ease-in-out;
+    transition: color 0.15s ease;
   }
 
   a:hover {
-    color: var(--primary-700);
+    color: var(--color-gold);
   }
 
   /* Lists */
@@ -248,90 +201,9 @@ html {
 
   /* Focus styles */
   *:focus-visible {
-    outline: 2px solid var(--ring);
+    outline: 2px solid var(--color-gold);
     outline-offset: 2px;
   }
-}
-
-/* 3D Perspective for Compass Scroll Effect */
-.perspective-1000 {
-  perspective: 1000px;
-  perspective-origin: center center;
-}
-
-/* Compass Needle Stabilizing Animation */
-@keyframes stabilize-north {
-  0% {
-    transform: rotate(15deg); /* Starting position - stable */
-  }
-  10% {
-    transform: rotate(60deg); /* Disturbed position */
-  }
-  30% {
-    transform: rotate(40deg); /* Settling */
-  }
-  50% {
-    transform: rotate(25deg); /* More settling */
-  }
-  70% {
-    transform: rotate(17deg); /* Fine adjustment */
-  }
-  85% {
-    transform: rotate(14deg); /* Overshoot */
-  }
-  92% {
-    transform: rotate(16deg); /* Correction */
-  }
-  96% {
-    transform: rotate(14.5deg); /* Fine tuning */
-  }
-  100% {
-    transform: rotate(15deg); /* Back to stable - seamless loop */
-  }
-}
-
-@keyframes stabilize-south {
-  0% {
-    transform: rotate(195deg); /* Starting position - stable */
-  }
-  10% {
-    transform: rotate(240deg); /* Disturbed position */
-  }
-  30% {
-    transform: rotate(220deg); /* Settling */
-  }
-  50% {
-    transform: rotate(205deg); /* More settling */
-  }
-  70% {
-    transform: rotate(197deg); /* Fine adjustment */
-  }
-  85% {
-    transform: rotate(194deg); /* Overshoot */
-  }
-  92% {
-    transform: rotate(196deg); /* Correction */
-  }
-  96% {
-    transform: rotate(194.5deg); /* Fine tuning */
-  }
-  100% {
-    transform: rotate(195deg); /* Back to stable - seamless loop */
-  }
-}
-
-.animate-stabilize {
-  animation: stabilize-north 8s ease-out infinite;
-  transform-origin: 150px 150px; /* Center of the compass */
-  animation-delay: 1s; /* Start after a brief pause */
-  transform: rotate(15deg); /* Start at the final position to avoid jump */
-}
-
-.animate-stabilize-south {
-  animation: stabilize-south 8s ease-out infinite;
-  transform-origin: 150px 150px; /* Center of the compass */
-  animation-delay: 1s; /* Start after a brief pause */
-  transform: rotate(195deg); /* Start at the final position to avoid jump */
 }
 
 /* Scroll Indicator Animation */
@@ -346,4 +218,13 @@ html {
 
 .animate-scroll-bounce {
   animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+/* Hover utilities using CSS vars — safe for Server Components */
+.link-hover-gold {
+  color: var(--color-text-secondary);
+  transition: color 150ms ease;
+}
+.link-hover-gold:hover {
+  color: var(--color-gold-dark);
 }

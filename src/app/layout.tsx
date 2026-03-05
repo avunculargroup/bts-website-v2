@@ -1,21 +1,27 @@
 import type { Metadata, Viewport } from 'next';
-import { Neuton, Source_Sans_3 } from 'next/font/google';
+import { Playfair_Display, DM_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
-const neuton = Neuton({
+const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-neuton',
-  weight: '400',
+  variable: '--font-playfair',
+  weight: ['400', '600', '700'],
 });
 
-const sourceSans3 = Source_Sans_3({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-source-sans',
-  weight: ['400', '600', '700'],
+  variable: '--font-dm-sans',
+  weight: ['400', '500', '600', '700'],
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+  weight: ['400', '500'],
 });
 
 export const metadata: Metadata = {
@@ -71,22 +77,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', rel: 'icon', sizes: 'any' },
-      { url: '/icon1.png', rel: 'icon', sizes: '192x192', type: 'image/png' },
-      { url: '/icon0.svg', rel: 'icon', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon0.svg', type: 'image/svg+xml' },
     ],
-    shortcut: [
-      { url: '/favicon.ico' },
-    ],
-    apple: [
-      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      {
-        rel: 'apple-touch-icon',
-        url: '/apple-icon.png',
-      },
-    ],
+    apple: { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
   },
   manifest: '/manifest.json',
   alternates: {
@@ -155,7 +149,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang='en-AU' className={`${neuton.variable} ${sourceSans3.variable}`}>
+    <html lang='en-AU' className={`${playfairDisplay.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://img.youtube.com" />
