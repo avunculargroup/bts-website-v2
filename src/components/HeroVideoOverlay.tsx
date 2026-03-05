@@ -41,7 +41,7 @@ export function HeroVideoOverlay({ onPlayClick }: HeroVideoOverlayProps) {
             {/* Play Icon Circle */}
             <div className='w-[72px] h-[72px] sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-32 lg:h-32 bg-white/90 group-hover:bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300'>
               <Play 
-                className='w-[42px] h-[42px] sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-16 lg:h-16 text-primary-900 ml-1' 
+                className='w-[42px] h-[42px] sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-16 lg:h-16 ml-1' style={{ color: 'var(--color-text-primary)' }}
                 fill='currentColor'
               />
             </div>
