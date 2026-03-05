@@ -291,12 +291,6 @@ export function HeroCTA() {
             >
               Book a 1-hour tailored, in-house introductory session for your CFO and financial department
             </p>
-            <p
-              className='text-2xl font-semibold mb-6'
-              style={{ fontFamily: 'var(--font-display)', color: 'var(--color-gold-dark)' }}
-            >
-              $195 per person
-            </p>
             <div className='flex flex-col sm:flex-row gap-3 justify-center items-center'>
               <button
                 className='py-2.5 px-6 text-sm font-medium rounded-lg transition-colors duration-100 active:scale-[0.98]'
@@ -360,12 +354,6 @@ export function HeroCTA() {
               style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
             >
               Schedule a 1-hour customised, in-house introductory workshop for your firm&apos;s staff
-            </p>
-            <p
-              className='text-2xl font-semibold mb-6'
-              style={{ fontFamily: 'var(--font-display)', color: 'var(--color-gold-dark)' }}
-            >
-              $195 per person
             </p>
             <div className='flex flex-col sm:flex-row gap-3 justify-center items-center'>
               <button
@@ -439,12 +427,6 @@ export function HeroCTA() {
               style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
             >
               Join our 1-day public workshop for you and your loved ones
-            </p>
-            <p
-              className='text-2xl font-semibold mb-6'
-              style={{ fontFamily: 'var(--font-display)', color: 'var(--color-gold-dark)' }}
-            >
-              $495 per person
             </p>
             <Link
               href='/events'
