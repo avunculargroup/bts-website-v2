@@ -131,15 +131,15 @@ export function Services() {
             className='text-sm'
             style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
           >
-            Ready to get started?{' '}
+            To find out more about our services,{' '}
             <Link
               href='/contact'
               className='font-medium underline underline-offset-2'
               style={{ color: 'var(--color-gold-dark)' }}
             >
-              Contact us
+              contact us
             </Link>{' '}
-            to learn more about our Bitcoin education services, or{' '}
+            or{' '}
             <Link
               href='/about'
               className='font-medium underline underline-offset-2'

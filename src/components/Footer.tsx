@@ -277,6 +277,9 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className='mt-10 pt-8' style={{ borderTop: '1px solid var(--color-border)' }}>
+          <p className='text-xs italic mb-6 text-center' style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-tertiary)' }}>
+            This platform provides general educational information only and does not constitute financial, legal, or tax advice. Consult a qualified adviser for guidance specific to your circumstances.
+          </p>
           <div className='flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0'>
             <p className='text-sm' style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-tertiary)' }}>
               © {new Date().getFullYear()} Bitcoin Treasury Solutions. All rights reserved.

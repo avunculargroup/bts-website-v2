@@ -70,7 +70,7 @@ export default function Home() {
                   onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--color-gold-dark)'; }}
                   onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'var(--color-gold)'; }}
                 >
-                  Learn more
+                  Explore our services
                 </button>
                 <button
                   onClick={() => setIsNewsletterModalOpen(true)}

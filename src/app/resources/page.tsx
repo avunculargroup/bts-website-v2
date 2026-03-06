@@ -32,7 +32,7 @@ export default function Resources() {
 
       if (response.ok) {
         setIsSuccess(true);
-        setMessage('Successfully subscribed!');
+        setMessage('Successfully subscribed.');
         setEmail('');
         setTimeout(() => {
           setIsSuccess(false);
@@ -287,7 +287,7 @@ export default function Resources() {
                     disabled={isSubmitting || isSuccess}
                     className='px-6 py-3 bg-white text-accent-600 font-semibold rounded-lg hover:bg-accent-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer font-display text-base whitespace-nowrap'
                   >
-                    {isSubmitting ? 'Subscribing...' : isSuccess ? 'Subscribed!' : 'Subscribe'}
+                    {isSubmitting ? 'Subscribing...' : isSuccess ? 'Subscribed' : 'Subscribe'}
                   </button>
                 </div>
                 {message && (

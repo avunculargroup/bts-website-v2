@@ -88,7 +88,7 @@ export default function Contact() {
               className='text-base leading-relaxed'
               style={{ fontFamily: 'var(--font-body)', color: 'var(--color-text-secondary)' }}
             >
-              Ready to start your Bitcoin education journey? Get in touch with us.
+              Get in touch to explore Bitcoin education options for your organisation or as an individual.
             </p>
           </div>
 
