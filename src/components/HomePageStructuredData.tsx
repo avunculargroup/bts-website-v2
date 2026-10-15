@@ -1,4 +1,5 @@
 import { generateVideoSchema } from '@/lib/structured-data';
+import { ORGANIZATION_ID, services } from '@/lib/site';
 
 export function HomePageStructuredData() {
   const heroVideoSchema = generateVideoSchema({
@@ -7,66 +8,31 @@ export function HomePageStructuredData() {
     videoId: "KLC-0dgBjEA",
   });
 
-  // Service structured data
-  const serviceSchemas = [
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Bitcoin Education Training",
-      "name": "Bitcoin Training",
-      "description": "Tailored programs for SME businesses, public companies, and community groups. Whether your organisation wants to understand Bitcoin's potential or prepare for digital asset adoption.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Bitcoin Treasury Solutions"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Australia"
-      },
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://bitcointreasurysolutions.com.au/contact"
-      }
+  // Service structured data, linked to the Organization node in the root layout
+  const serviceSchemas = services.map((service) => ({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": service.serviceType,
+    "name": service.name,
+    "description": service.description,
+    "provider": { "@id": ORGANIZATION_ID },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Australia"
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Bitcoin Consulting",
-      "name": "Bitcoin Consulting",
-      "description": "One-on-one and small team coaching for deeper guidance. We explore your specific goals, risk tolerance and investment horizon to build customised plans.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Bitcoin Treasury Solutions"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Australia"
-      },
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://bitcointreasurysolutions.com.au/contact"
-      }
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": `${service.name} topics`,
+      "itemListElement": service.features.map((feature) => ({
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": feature }
+      }))
     },
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Bitcoin Education Workshops",
-      "name": "Public Events",
-      "description": "Small-group workshops and educational sessions designed for curious investors aged 35 and over. Learn Bitcoin fundamentals in a supportive, jargon-free environment.",
-      "provider": {
-        "@type": "EducationalOrganization",
-        "name": "Bitcoin Treasury Solutions"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Australia"
-      },
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://bitcointreasurysolutions.com.au/events"
-      }
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": service.url
     }
-  ];
+  }));
 
   return (
     <>

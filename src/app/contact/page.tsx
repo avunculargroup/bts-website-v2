@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Contact Bitcoin Treasury Solutions in Melbourne, Victoria for Bitcoin education workshops, training, and consultations. Book a workshop or schedule a call.',
     images: [
       {
-        url: '/images/og-contact.png',
+        url: '/images/open-graph-v2.png',
         width: 1200,
         height: 630,
         alt: 'Contact Bitcoin Treasury Solutions',

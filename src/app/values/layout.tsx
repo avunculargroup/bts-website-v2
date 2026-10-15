@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     url: 'https://bitcointreasurysolutions.com.au/values',
     images: [
       {
-        url: '/images/og-values.png',
+        url: '/images/open-graph-v2.png',
         width: 1200,
         height: 630,
         alt: 'Bitcoin Through Values - Bitcoin Treasury Solutions',

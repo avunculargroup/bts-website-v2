@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: 'Melbourne-based Bitcoin Treasury Solutions provides structured Bitcoin education for Australian professionals. Corporate training, workshops, and consulting for SMEs and treasury teams.',
     images: [
       {
-        url: '/images/og-about.png',
+        url: '/images/open-graph-v2.png',
         width: 1200,
         height: 630,
         alt: 'About Bitcoin Treasury Solutions',

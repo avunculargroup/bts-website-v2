@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
+import { organizationGraph } from '@/lib/site';
 
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
@@ -88,6 +89,10 @@ export const metadata: Metadata = {
     languages: {
       'en-AU': 'https://bitcointreasurysolutions.com.au',
     },
+    // Plain-language summary for AI assistants (https://llmstxt.org)
+    types: {
+      'text/markdown': '/llms.txt',
+    },
   },
 };
 
@@ -100,53 +105,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": ["EducationalOrganization", "LocalBusiness"],
-    "name": "Bitcoin Treasury Solutions",
-    "alternateName": "BTS",
-    "@id": "https://bitcointreasurysolutions.com.au",
-    "url": "https://bitcointreasurysolutions.com.au",
-    "logo": "https://bitcointreasurysolutions.com.au/images/logo.svg",
-    "image": "https://bitcointreasurysolutions.com.au/images/logo.svg",
-    "description": "Structured Bitcoin Learning for Australia's Professionals. Training, consulting, and public events to help your organisation understand Bitcoin, accept and store it safely, and implement advanced self-custody strategies.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "585 Little Collins Street, Suite 513",
-      "addressLocality": "Melbourne",
-      "addressRegion": "Victoria",
-      "postalCode": "3000",
-      "addressCountry": "AU"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -37.8136,
-      "longitude": 144.9631
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "enquiry@btreasury.com.au",
-      "contactType": "Customer Service",
-      "url": "https://calendly.com/carri27/30min",
-      "areaServed": "AU",
-      "availableLanguage": "en-AU"
-    },
-    "founder": {
-      "@type": "Organization",
-      "name": "Avuncular Group Pty Ltd",
-      "legalName": "Avuncular Group Pty Ltd ABN 82 683 088 173"
-    },
-    "areaServed": {
-      "@type": "Country",
-      "name": "Australia"
-    },
-    "priceRange": "$$",
-    "sameAs": [
-      "https://x.com/btreasuryau",
-      "https://www.youtube.com/channel/UCfl6Ad-fNMLXRAN7rAGuTlQ",
-      "https://www.linkedin.com/company/btreasury/"
-    ]
-  };
+  const organizationSchema = organizationGraph();
 
   return (
     <html lang='en-AU' className={`${playfairDisplay.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}>

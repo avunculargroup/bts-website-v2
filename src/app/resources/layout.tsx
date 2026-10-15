@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     description: 'Curated Bitcoin resources, research reports, and educational materials for Australian investors. Featured content from leading institutions and Bitcoin experts.',
     images: [
       {
-        url: '/images/og-resources.png',
+        url: '/images/open-graph-v2.png',
         width: 1200,
         height: 630,
         alt: 'Bitcoin Resources - Bitcoin Treasury Solutions',

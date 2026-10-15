@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: 'Join Bitcoin Treasury Solutions for educational workshops and community events in Melbourne. Small-group sessions for curious investors. Interstate available.',
     images: [
       {
-        url: '/images/og-events.png',
+        url: '/images/open-graph-v2.png',
         width: 1200,
         height: 630,
         alt: 'Bitcoin Events - Bitcoin Treasury Solutions',

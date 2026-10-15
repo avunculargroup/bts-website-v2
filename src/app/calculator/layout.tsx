@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: 'https://bitcointreasurysolutions.com.au/calculator',
     images: [
       {
-        url: '/images/og-calculator.png',
+        url: '/images/open-graph-v2.png',
         width: 1200,
         height: 630,
         alt: 'Bitcoin CAGR Calculator - Bitcoin Treasury Solutions',
