@@ -18,6 +18,7 @@ import { Target, Rocket, Zap } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Component Demo - BTS Website',
   description: 'A showcase of all available components for the BTS corporate website',
+  robots: { index: false, follow: false },
 }
 
 export default function DemoPage() {
